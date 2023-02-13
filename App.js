@@ -1,9 +1,3 @@
-import { useEffect, useCallback } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from "expo-splash-screen";
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -12,7 +6,8 @@ import Search from './src/screens/Search';
 import Reels from './src/screens/Reels';
 import Shops from './src/screens/Shops';
 import Profile from './src/screens/Profile';
-import Ionic from 'react-native-vector-icons/Ionicons';
+import { Ionicons, MaterialCommunityIcons, Entypo, Feather } from '@expo/vector-icons';
+import Story from './src/components/Story';
 
 export default function App() {
 
@@ -30,24 +25,26 @@ export default function App() {
             height: 50,
           },
 
-          tabBarIcon: ({focused, size, colour}) => {
+          tabBarIcon: ({focused, size = 24}) => {
             let iconName;
             if (route.name === 'Home') {
-              iconName = focused ? 'home-sharp' : 'home-outline';
-              size = focused ? size + 8 : size + 2;
+              iconName = focused ? 'home' : 'home-outline';
+              return <Ionicons name={iconName} size={size}/>;
             } else if (route.name === 'Search') {
-              iconName = focused ? 'search' : 'ios-search-outline';
+              iconName = focused ? 'search' : 'search-outline';
+              return <Ionicons name={iconName} size={size}/>;
             } else if (route.name === 'Reels') {
-              iconName = focused
-                ? 'caret-forward-circle'
-                : 'caret-forward-circle-outline';
+              iconName = focused ? 'youtube' : 'social-youtube';
+              if (iconName === 'youtube') { return <Entypo name="youtube" size={size} color="black" /> }
+              return <Feather name="youtube" size={size} color="black" />
             } else if (route.name === 'Shops') {
-              iconName = focused ? 'ios-heart' : 'ios-heart-outline';
+              iconName = focused ? 'shopping' : 'shopping-outline';
+              return <MaterialCommunityIcons name={iconName} size={size} color="black" />
             } else if (route.name === 'Profile') {
-              iconName = focused ? 'ios-person-circle' : 'ios-person-outline';
+              iconName = focused ? 'logo-react' : 'logo-react';
+              return <Ionicons name={iconName} size={size}/>;
             }
-
-            return <Ionic name={iconName} size={size} color={colour} />;
+            return
           },
         })}>
         <Tab.Screen name="Home" component={Home} />
@@ -66,6 +63,7 @@ export default function App() {
           headerShown: false,
         }}>
         <Stack.Screen name="Bottom" component={BottomTabScreen} />
+        <Stack.Screen name="Story" component={Story} />
       </Stack.Navigator>
     </NavigationContainer>
   )
