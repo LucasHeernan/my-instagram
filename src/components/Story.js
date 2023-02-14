@@ -1,10 +1,32 @@
-import React, {useState, useEffect} from "react";
-import { View, StatusBar, TouchableOpacity, Image, Text, TextInput } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, StatusBar, TouchableOpacity, Image, Text, TextInput, Animated } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 const Story = ({ route, navigation }) => {
 
   const { name, image } = route.params;
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      navigation.goBack();
+    }, 8000);
+
+    Animated.timing(progress, {
+      toValue: 8,
+      duration: 8000,
+      useNativeDriver: false
+    }).start();
+
+    return () => clearTimeout(timer);
+
+  }, []);
+
+  const [progress, setProgress] = useState(new Animated.Value(0));
+
+  const progressAnimation = progress.interpolate({
+    inputRange: [0, 8],
+    outputRange: ["0%", "100%"]
+  })
 
   return (
     <View
@@ -27,19 +49,21 @@ const Story = ({ route, navigation }) => {
           top: 18,
         }}
       >
-        <View
+        <Animated.View
           style={{
             height: "100%",
             backgroundColor: "white",
-            width: "50%"
+            width: progressAnimation
           }}
         >
-        </View>
+        </Animated.View>
       </View>
 
+      {/* PROFILE */}
       <View
         style={{
-          padding: 15,
+          paddingHorizontal: 16,
+          paddingVertical: 18,
           flexDirection: "row",
           alignItems: "center",
           position: "absolute",
@@ -68,7 +92,6 @@ const Story = ({ route, navigation }) => {
             }}
           />
         </View>
-
         <View
           style={{
             justifyContent: "space-between",
@@ -77,13 +100,13 @@ const Story = ({ route, navigation }) => {
           }}
         >
           <Text style={{ color: "white", fontSize: 15, paddingLeft: 10 }}>{name}</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Ionicons
               name="close"
               style={{
                 fontSize: 20,
                 color: "white",
-                opacity: 0.6
+                opacity: 0.7
               }}
             />
           </TouchableOpacity>
@@ -106,38 +129,39 @@ const Story = ({ route, navigation }) => {
           left: 0,
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           marginVertical: 10,
           width: "100%",
           paddingHorizontal: 5
         }}
       >
         <TextInput
-          placeholder="send message"
+          placeholder="Send message"
           placeholderTextColor="white"
           style={{
             borderColor: "gray",
             borderRadius: 25,
-            width: "80%",
+            width: "75%",
             height: 50,
             paddingLeft: 20,
             borderWidth: 1,
-            fontSize: 20,
-            color: "white"
+            fontSize: 18,
+            color: "white",
+            opacity: 0.9
           }}
         />
         <View
           style={{
             flexDirection: "row",
-            justifyContent: "space-evenly",
+            justifyContent: "space-around",
             width: 80
           }}
         >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Feather name="heart" size={24} color= "white" />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Feather name="send" size={24} color= "white" />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Feather name="send" size={23} color= "white" />
           </TouchableOpacity>
         </View>
       </View>

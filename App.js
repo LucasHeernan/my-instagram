@@ -6,7 +6,7 @@ import Search from './src/screens/Search';
 import Reels from './src/screens/Reels';
 import Shops from './src/screens/Shops';
 import Profile from './src/screens/Profile';
-import { Ionicons, MaterialCommunityIcons, Entypo, Feather } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import Story from './src/components/Story';
 
 export default function App() {
@@ -31,12 +31,10 @@ export default function App() {
               iconName = focused ? 'home' : 'home-outline';
               return <Ionicons name={iconName} size={size}/>;
             } else if (route.name === 'Search') {
-              iconName = focused ? 'search' : 'search-outline';
-              return <Ionicons name={iconName} size={size}/>;
+              return focused ? <FontAwesome name="search" size={size} color="black" /> : <Ionicons name="search" size={size} color="black" />
             } else if (route.name === 'Reels') {
               iconName = focused ? 'youtube' : 'social-youtube';
-              if (iconName === 'youtube') { return <Entypo name="youtube" size={size} color="black" /> }
-              return <Feather name="youtube" size={size} color="black" />
+              return iconName === 'youtube' ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
             } else if (route.name === 'Shops') {
               iconName = focused ? 'shopping' : 'shopping-outline';
               return <MaterialCommunityIcons name={iconName} size={size} color="black" />
