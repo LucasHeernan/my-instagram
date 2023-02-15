@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { View, Image, Text, TouchableOpacity, TextInput } from "react-native";
 import postInfo from "../../assets/objects/postInfo";
-import { Feather, AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Feather, AntDesign, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 
 const Post = () => {
+
+  const [keep, setKeep] = useState(false);
 
   return (
     <View>
@@ -14,9 +16,7 @@ const Post = () => {
             <View
               key={index}
               style={{
-                paddingBottom: 10,
-                borderBottomColor: "gray",
-                borderBottomWidth: 0.2
+                paddingBottom: 10
               }}
             >
               <View
@@ -24,7 +24,8 @@ const Post = () => {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  padding: 15
+                  paddingHorizontal: 15,
+                  paddingVertical: 10
                 }}
               >
                 <View
@@ -47,7 +48,9 @@ const Post = () => {
                     </Text>
                   </View>
                 </View>
-                <Feather name="more-vertical" style={{fontSize: 20}} />
+                <TouchableOpacity>
+                  <Feather name="more-vertical" style={{fontSize: 20}} />
+                </TouchableOpacity>
               </View>
 
               <View
@@ -72,7 +75,7 @@ const Post = () => {
                   justifyContent: "space-between",
                   alignItems: "center",
                   paddingHorizontal: 12,
-                  paddingVertical: 15
+                  paddingVertical: 10
                 }}
               >
                 <View
@@ -98,8 +101,11 @@ const Post = () => {
                     <Feather name="send" size={23} />
                   </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
-                  <Feather name="bookmark" size={24} />
+                <TouchableOpacity onPress={() => setKeep(!keep)}>
+                  {
+                    keep ? <FontAwesome name="bookmark" size={24} /> :
+                    <FontAwesome name="bookmark-o" size={24} />
+                  }
                 </TouchableOpacity>
               </View>
 

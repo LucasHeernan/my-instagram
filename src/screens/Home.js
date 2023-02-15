@@ -30,18 +30,19 @@ const Home = () => {
 	return (
 		<View onLayout={onLayout}
 			style={{
-				backgroundColor: "white",
+				backgroundColor: "#FFFFFF",
 				height: "100%"
 			}}
 		>
-			<StatusBar backgroundColor="white" barStyle="dark-content" animated={true} />
+			<StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" animated={true} />
 			<View
 				style={{
 					display: "flex",
 					flexDirection: "row",
 					alignItems: "center",
 					justifyContent: "space-between",
-					marginVertical: 6
+					paddingTop: 16,
+          paddingBottom: 7
 				}}
 			>
 				<Text
@@ -60,13 +61,13 @@ const Home = () => {
 					}}
 				>
 					<TouchableOpacity>
-						<Feather name="plus-square" size={24} color="black" style={{ marginHorizontal: 9 }} />
+						<Feather name="plus-square" size={24} color="black" style={{ marginHorizontal: 10 }} />
 					</TouchableOpacity>
 					<TouchableOpacity>
-						<Feather name="heart" size={24} color="black" style={{ marginHorizontal: 9 }} />
+						<Feather name="heart" size={24} color="black" style={{ marginHorizontal: 10 }} />
 					</TouchableOpacity>
 					<TouchableOpacity>
-						<Feather name="message-circle" size={24} color="black" style={{ marginHorizontal: 9 }} />
+						<Feather name="message-circle" size={24} color="black" style={{ marginHorizontal: 10 }} />
 					</TouchableOpacity>
 				</View>
 			</View>

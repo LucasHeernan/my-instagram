@@ -1,11 +1,21 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, ScrollView } from "react-native";
+import SearchBar from "../components/SearchBar";
 
 const Search = () => {
-    return (
-        <View>
-            <Text>Search</Text>
-        </View>
-    )
+  return (
+    <View
+      style={{
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'white',
+        position: 'relative',
+      }}>
+      {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+        <SearchBar />
+      {/* </ScrollView> */}
+    </View>
+  )
 }
+
 export default Search;

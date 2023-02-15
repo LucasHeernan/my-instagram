@@ -1,6 +1,6 @@
 const postInfo = [
   {
-    postTitle: "mr shermon",
+    postTitle: "lucasheernan",
     postPersonImage: require("../../src/gallery/profilePictures/userProfile.png"),
     postImage: require("../../src/gallery/postImages/post1.jpg"),
     likes: 765,
@@ -14,14 +14,14 @@ const postInfo = [
     isLiked: false,
   },
   {
-    postTitle: "Tom",
+    postTitle: "tom",
     postPersonImage: require("../../src/gallery/profilePictures/profile4.jpg"),
     postImage: require("../../src/gallery/postImages/post3.jpg"),
     likes: 534,
     isLiked: false,
   },
   {
-    postTitle: "I am Groot",
+    postTitle: "i_am_groot",
     postPersonImage: require("../../src/gallery/profilePictures/profile3.jpg"),
     postImage: require("../../src/gallery/postImages/post4.jpg"),
     likes: 875,

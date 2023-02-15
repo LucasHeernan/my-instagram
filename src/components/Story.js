@@ -85,7 +85,7 @@ const Story = ({ route, navigation }) => {
             source={image}
             style={{
               borderRadius: 100,
-              backgroundColor: "orange",
+              backgroundColor: "black",
               resizeMode: "cover",
               width: "92%",
               height: "92%"

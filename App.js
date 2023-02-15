@@ -43,8 +43,9 @@ export default function App() {
               return <Ionicons name={iconName} size={size}/>;
             }
             return
-          },
-        })}>
+          }
+        })}
+      >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
         <Tab.Screen name="Reels" component={Reels} />
@@ -67,53 +68,3 @@ export default function App() {
   )
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default function App() {
-
-//   const [fonstLoaded] = useFonts({
-//     Lobster: require("./assets/fonts/Lobster-Regular.ttf")
-//   })
-
-//   useEffect(() => {
-//     async function prepare() {
-//       await SplashScreen.preventAutoHideAsync();
-//     }
-//     prepare();
-//   }, [])
-
-//   const onLayout = useCallback( async () => {
-//     if(fonstLoaded) {
-//       await SplashScreen.hideAsync();
-//     }
-//   }, [fonstLoaded])
-
-//   if (!fonstLoaded) return null
-
-//   return (
-//     <View style={styles.container} onLayout={onLayout}>
-//       <Text style={{ fontFamily: 'Lobster', fontSize: 40 }}>Instagram</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
