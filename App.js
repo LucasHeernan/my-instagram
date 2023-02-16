@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/Home';
 import Search from './src/screens/Search';
 import Reels from './src/screens/Reels';
-import Shops from './src/screens/Shops';
+import Shop from './src/screens/Shop';
 import Profile from './src/screens/Profile';
 import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import Story from './src/components/Story';
@@ -35,7 +35,7 @@ export default function App() {
             } else if (route.name === 'Reels') {
               iconName = focused ? 'youtube' : 'social-youtube';
               return iconName === 'youtube' ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
-            } else if (route.name === 'Shops') {
+            } else if (route.name === 'Shop') {
               iconName = focused ? 'shopping' : 'shopping-outline';
               return <MaterialCommunityIcons name={iconName} size={size} color="black" />
             } else if (route.name === 'Profile') {
@@ -49,7 +49,7 @@ export default function App() {
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
         <Tab.Screen name="Reels" component={Reels} />
-        <Tab.Screen name="Shops" component={Shops} />
+        <Tab.Screen name="Shop" component={Shop} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
     );

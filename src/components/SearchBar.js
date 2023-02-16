@@ -1,43 +1,43 @@
-import React from 'react';
-import { View, TextInput } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React from "react";
+import { View, TextInput } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-const SearchBar = () => {
+export default function SearchBar() {
   return (
     <View
       style={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
         paddingVertical: 10,
-        position: 'relative',
-      }}>
+        position: "relative",
+        paddingRight: 9
+      }}
+    >
       <Ionicons
         name="search"
+        size={18}
         style={{
-          fontSize: 18,
-          opacity: 0.7,
-          position: 'absolute',
+          opacity: 0.8,
+          position: "absolute",
           zIndex: 1,
-          left: 25,
+          left: 26,
         }}
       />
       <TextInput
         placeholder="Search"
         placeholderTextColor="#909090"
         style={{
-          width: '94%',
-          backgroundColor: '#EBEBEB',
+          width: "94%",
+          backgroundColor: "#EBEBEB",
           borderRadius: 10,
-          alignItems: 'center',
-          justifyContent: 'center',
+          alignItems: "center",
+          justifyContent: "center",
           fontSize: 15,
           padding: 4,
-          paddingLeft: 40,
+          paddingLeft: 45,
         }}
       />
     </View>
   );
 };
-
-export default SearchBar;

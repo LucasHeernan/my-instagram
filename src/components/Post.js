@@ -3,7 +3,7 @@ import { View, Image, Text, TouchableOpacity, TextInput } from "react-native";
 import postInfo from "../../assets/objects/postInfo";
 import { Feather, AntDesign, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 
-const Post = () => {
+export default function Post() {
 
   const [keep, setKeep] = useState(false);
 
@@ -188,5 +188,3 @@ const Post = () => {
     </View>
   )
 }
-
-export default Post;

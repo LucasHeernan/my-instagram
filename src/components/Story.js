@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, StatusBar, TouchableOpacity, Image, Text, TextInput, Animated } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
-const Story = ({ route, navigation }) => {
+export default function Story({ route, navigation }) {
 
   const { name, image } = route.params;
 
@@ -59,7 +59,6 @@ const Story = ({ route, navigation }) => {
         </Animated.View>
       </View>
 
-      {/* PROFILE */}
       <View
         style={{
           paddingHorizontal: 16,
@@ -169,5 +168,3 @@ const Story = ({ route, navigation }) => {
     </View>
   )
 }
-
-export default Story;

@@ -4,7 +4,7 @@ import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import storyInfo from "../../assets/objects/storyInfo";
 
-const Stories = () => {
+export default function Stories() {
 
 	const navigation = useNavigation();
 
@@ -133,5 +133,3 @@ const Stories = () => {
     </View>
 	)
 }
-
-export default Stories;

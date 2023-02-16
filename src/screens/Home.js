@@ -6,7 +6,7 @@ import * as SplashScreen from "expo-splash-screen";
 import Stories from "../components/Stories";
 import Post from "../components/Post";
 
-const Home = () => {
+export default function Home() {
 
 	const [fonstLoaded] = useFonts({
 		Lobster: require("../../assets/fonts/Lobster-Regular.ttf")
@@ -80,5 +80,3 @@ const Home = () => {
 		</View>
 	)
 }
-
-export default Home;
