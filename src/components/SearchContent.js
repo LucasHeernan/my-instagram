@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
-import searchData from "../../assets/objects/searchData";
+import { searchData } from "../../assets/objects/searchData";
 
 export default function SearchContent({ getImage }) {
 

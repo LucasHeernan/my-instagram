@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Image, Text, TouchableOpacity, TextInput } from "react-native";
-import postInfo from "../../assets/objects/postInfo";
+import { postData } from "../../assets/objects/postData";
 import { Feather, AntDesign, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 
 export default function Post() {
@@ -10,7 +10,7 @@ export default function Post() {
   return (
     <View>
       {
-        postInfo.map((data, index) => {
+        postData.map((data, index) => {
           const [like, setLike] = useState(data.isLiked);
           return (
             <View

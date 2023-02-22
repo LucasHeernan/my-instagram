@@ -1,4 +1,4 @@
-const searchData = [
+export const searchData = [
   {
     id: 0,
     images: [
@@ -29,5 +29,3 @@ const searchData = [
     ],
   },
 ];
-
-export default searchData;
