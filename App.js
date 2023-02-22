@@ -1,6 +1,8 @@
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Image } from 'react-native';
 import Home from './src/screens/Home';
 import Search from './src/screens/Search';
 import Reels from './src/screens/Reels';
@@ -39,8 +41,51 @@ export default function App() {
               iconName = focused ? 'shopping' : 'shopping-outline';
               return <MaterialCommunityIcons name={iconName} size={size} color="black" />
             } else if (route.name === 'Profile') {
-              iconName = focused ? 'logo-react' : 'logo-react';
-              return <Ionicons name={iconName} size={size}/>;
+              return iconName = focused ? (
+                <View
+                  style={{
+                    width: 27,
+                    height: 27,
+                    borderRadius: 100,
+                    backgroundColor: "white",
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderWidth: 2,
+                    borderColor: "black"
+                  }}
+                >
+                  <Image
+                    source={{ uri: require('./src/gallery/profilePictures/userProfile.png') }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      resizeMode: 'cover',
+                      borderRadius: 100
+                    }}
+                  />
+                </View>
+              ) : (
+                <View
+                  style={{
+                    width: 25,
+                    height: 25,
+                    borderRadius: 100,
+                    backgroundColor: "white",
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Image
+                    source={{ uri: require('./src/gallery/profilePictures/userProfile.png') }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      resizeMode: 'cover',
+                      borderRadius: 100
+                    }}
+                  />
+                </View>
+              )
             }
             return
           }
@@ -66,5 +111,4 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   )
-
 }
