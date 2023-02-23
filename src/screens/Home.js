@@ -72,7 +72,7 @@ export default function Home() {
 				</View>
 			</View>
 
-			<ScrollView>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<Stories />
         <Post />
 			</ScrollView>

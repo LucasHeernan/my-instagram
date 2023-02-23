@@ -1,15 +1,15 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Image } from 'react-native';
-import Home from './src/screens/Home';
-import Search from './src/screens/Search';
-import Reels from './src/screens/Reels';
-import Shop from './src/screens/Shop';
-import Profile from './src/screens/Profile';
-import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
-import Story from './src/components/Story';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Image } from "react-native";
+import Home from "./src/screens/Home";
+import Search from "./src/screens/Search";
+import Reels from "./src/screens/Reels";
+import Shop from "./src/screens/Shop";
+import Profile from "./src/screens/Profile";
+import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
+import Story from "./src/components/Story";
 
 export default function App() {
 
@@ -29,38 +29,38 @@ export default function App() {
 
           tabBarIcon: ({focused, size = 24}) => {
             let iconName;
-            if (route.name === 'Home') {
-              iconName = focused ? 'home' : 'home-outline';
+            if (route.name === "Home") {
+              iconName = focused ? "home" : "home-outline";
               return <Ionicons name={iconName} size={size}/>;
-            } else if (route.name === 'Search') {
+            } else if (route.name === "Search") {
               return focused ? <FontAwesome name="search" size={size} color="black" /> : <Ionicons name="search" size={size} color="black" />
-            } else if (route.name === 'Reels') {
-              iconName = focused ? 'youtube' : 'social-youtube';
-              return iconName === 'youtube' ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
-            } else if (route.name === 'Shop') {
-              iconName = focused ? 'shopping' : 'shopping-outline';
+            } else if (route.name === "Reels") {
+              iconName = focused ? "youtube" : "social-youtube";
+              return iconName === "youtube" ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
+            } else if (route.name === "Shop") {
+              iconName = focused ? "shopping" : "shopping-outline";
               return <MaterialCommunityIcons name={iconName} size={size} color="black" />
-            } else if (route.name === 'Profile') {
+            } else if (route.name === "Profile") {
               return iconName = focused ? (
                 <View
                   style={{
-                    width: 27,
-                    height: 27,
+                    width: 28,
+                    height: 28,
                     borderRadius: 100,
                     backgroundColor: "white",
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    alignItems: "center",
+                    justifyContent: "center",
                     borderWidth: 2,
                     borderColor: "black"
                   }}
                 >
                   <Image
-                    source={{ uri: require('./src/gallery/profilePictures/userProfile.png') }}
+                    source={require("./src/gallery/profilePictures/userProfile.png")}
                     style={{
                       width: "100%",
                       height: "100%",
-                      resizeMode: 'cover',
-                      borderRadius: 100
+                      resizeMode: "cover",
+                      borderRadius: 100,
                     }}
                   />
                 </View>
@@ -71,16 +71,16 @@ export default function App() {
                     height: 25,
                     borderRadius: 100,
                     backgroundColor: "white",
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    alignItems: "center",
+                    justifyContent: "center"
                   }}
                 >
                   <Image
-                    source={{ uri: require('./src/gallery/profilePictures/userProfile.png') }}
+                    source={require("./src/gallery/profilePictures/userProfile.png")}
                     style={{
                       width: "100%",
                       height: "100%",
-                      resizeMode: 'cover',
+                      resizeMode: "cover",
                       borderRadius: 100
                     }}
                   />

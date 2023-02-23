@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { View, Text, Dimensions, TouchableOpacity, Image } from "react-native";
 import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 
