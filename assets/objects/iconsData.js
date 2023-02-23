@@ -1,58 +1,72 @@
 export const iconsData = [
   {
     tech: "javascript",
-    img: require("../../src/icons/javascript.png")
+    img: require("../../src/gallery/techImages/javascript.png"),
+    icon: require("../../src/gallery/icons/js.ico")
   },
   {
     tech: "react native",
-    img: require("../../src/icons/react-native.png")
+    img: require("../../src/gallery/techImages/react-native.png"),
+    icon: "📲"
   },
   {
     tech: "expo",
-    img: require("../../src/icons/expo.png")
+    img: require("../../src/gallery/techImages/expo.png"),
+    icon: require("../../src/gallery/icons/expo.ico")
   },
   {
     tech: "html",
-    img: require("../../src/icons/html.png")
+    img: require("../../src/gallery/techImages/html.png"),
+    icon: require("../../src/gallery/icons/html.ico")
   },
   {
     tech: "css",
-    img: require("../../src/icons/css.png")
+    img: require("../../src/gallery/techImages/css.png"),
+    icon: require("../../src/gallery/icons/css.ico")
   },
   {
     tech: "reactjs",
-    img: require("../../src/icons/react.png")
+    img: require("../../src/gallery/techImages/react.png"),
+    icon: require("../../src/gallery/icons/react.ico")
   },
   {
     tech: "git",
-    img: require("../../src/icons/git.png")
+    img: require("../../src/gallery/techImages/git.png"),
+    icon: require("../../src/gallery/icons/git.ico")
   },
   {
     tech: "nodejs",
-    img: require("../../src/icons/nodejs.png")
+    img: require("../../src/gallery/techImages/nodejs.png"),
+    icon: require("../../src/gallery/icons/node.ico")
   },
   {
     tech: "npm",
-    img: require("../../src/icons/npm.png")
+    img: require("../../src/gallery/techImages/npm.png"),
+    icon: require("../../src/gallery/icons/npm.ico")
   },
   {
     tech: "postgresql",
-    img: require("../../src/icons/postgresql.png")
+    img: require("../../src/gallery/techImages/postgresql.png"),
+    icon: require("../../src/gallery/icons/postgresql.ico")
   },
   {
     tech: "github",
-    img: require("../../src/icons/github.png")
+    img: require("../../src/gallery/techImages/github.png"),
+    icon: require("../../src/gallery/icons/github.ico")
   },
   {
     tech: "express",
-    img: require("../../src/icons/express.png")
+    img: require("../../src/gallery/techImages/express.png"),
+    icon: "🚚"
   },
   {
     tech: "mysql",
-    img: require("../../src/icons/mysql.png")
+    img: require("../../src/gallery/techImages/mysql.png"),
+    icon: require("../../src/gallery/icons/mysql.ico")
   },
   {
     tech: "sequelize",
-    img: require("../../src/icons/sequelize.png")
+    img: require("../../src/gallery/techImages/sequelize.png"),
+    icon: require("../../src/gallery/icons/sequelize.ico")
   },
 ];
