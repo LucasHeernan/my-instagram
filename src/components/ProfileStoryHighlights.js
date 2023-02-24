@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Image, ScrollView } from "react-native";
+import { View, TouchableOpacity, Image, ScrollView, Text } from "react-native";
 import { iconsData } from "../../assets/objects/iconsData";
 import { Octicons } from "@expo/vector-icons";
 
@@ -11,7 +11,7 @@ export default function ProfileStoryHighlights() {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         style={{
-          paddingVertical: 12,
+          paddingVertical: 12
         }}
       >
         {
@@ -22,6 +22,7 @@ export default function ProfileStoryHighlights() {
                 style={{
                   alignItems: "center",
                   justifyContent: "center",
+                  flexDirection: "column",
                   paddingHorizontal: 6
                 }}
               >
@@ -34,7 +35,7 @@ export default function ProfileStoryHighlights() {
                     borderColor: "#E6E6E6",
                     marginHorizontal: 5,
                     justifyContent: "center",
-                    alignItems: "center",
+                    alignItems: "center"
                   }}
                 >
                   <Image
@@ -50,6 +51,48 @@ export default function ProfileStoryHighlights() {
                     }}
                   />
                 </TouchableOpacity>
+                {
+                  typeof data.icon === "string" ? (
+                    <View
+                      key={index}
+                      style={{
+                        width: 18,
+                        height: 18,
+                        borderRadius: 100,
+                        marginTop: 8,
+                        backgroundColor: "white"
+                      }}
+                    >
+                      <Text
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      >
+                        {data.icon}
+                      </Text>
+                    </View>
+                  ) : (
+                    <View
+                      key={index}
+                      style={{
+                        width: 18,
+                        height: 18,
+                        borderRadius: 100,
+                        marginTop: 8,
+                        backgroundColor: "white"
+                      }}
+                    >
+                      <Image
+                        source={data.icon}
+                        style={{
+                          width: "100%",
+                          height: "100%"
+                        }}
+                      />
+                    </View>
+                  )
+                }
               </View>
             )
           })
@@ -58,21 +101,24 @@ export default function ProfileStoryHighlights() {
           style={{
             alignItems: "center",
             justifyContent: "center",
-            paddingHorizontal: 13
+            paddingHorizontal: 13,
+            flexDirection: "column"
           }}
         >
           <TouchableOpacity
             style={{
-              width: 58,
-              height: 58,
+              width: 61,
+              height: 61,
               borderRadius: 100,
               borderWidth: 1.2,
               alignItems: "center",
               justifyContent: "center",
+              top: 1
             }}
           >
             <Octicons name="plus" size={25} color="black" />
           </TouchableOpacity>
+          <Text style={{ marginTop: 8, top: 1 }} >And more</Text>
         </View>
       </ScrollView>
     </View>

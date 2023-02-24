@@ -32,7 +32,7 @@ export default function ProfileButtons() {
             style={{
               fontSize: 14,
               fontWeight: "600",
-              letterSpacing: 0.9,
+              letterSpacing: 0.5,
               alignSelf:"center"
             }}
           >
@@ -54,7 +54,7 @@ export default function ProfileButtons() {
             style={{
               fontSize: 14,
               fontWeight: "600",
-              letterSpacing: 0.9,
+              letterSpacing: 0.5,
               alignSelf:"center"
             }}
           >
