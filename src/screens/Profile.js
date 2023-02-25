@@ -66,8 +66,9 @@ export default function Profile() {
         <ProfileHeader />
         <ProfileButtons />
         <ProfileStoryHighlights />
+        <ProfileContent />
       </ScrollView>
-      <ProfileContent />
+      
 
     </View>
   )

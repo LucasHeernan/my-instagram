@@ -35,8 +35,7 @@ export default function App() {
             } else if (route.name === "Search") {
               return focused ? <FontAwesome name="search" size={size} color="black" /> : <Ionicons name="search" size={size} color="black" />
             } else if (route.name === "Reels") {
-              iconName = focused ? "youtube" : "social-youtube";
-              return iconName === "youtube" ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
+              return focused ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
             } else if (route.name === "Shop") {
               iconName = focused ? "shopping" : "shopping-outline";
               return <MaterialCommunityIcons name={iconName} size={size} color="black" />
