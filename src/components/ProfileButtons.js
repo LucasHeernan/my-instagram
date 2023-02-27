@@ -6,7 +6,8 @@ import { useNavigation } from "@react-navigation/native";
 export default function ProfileButtons({ friendProfile }) {
 
   const navigate = useNavigation();
-  const [person, setPerson] = useState(false)
+  const [person, setPerson] = useState(false);
+  const [follow, setFollow] = useState(false);
 
   return (
     <View
@@ -19,14 +20,15 @@ export default function ProfileButtons({ friendProfile }) {
       }}
     >
       <TouchableOpacity
-        onPress={() => navigate.push("ProfileEdit")}
+        onPress={ friendProfile ? () => setFollow(!follow) : () => navigate.push("ProfileEdit") }
         style={{
           height: 31,
           width: "43%",
           borderRadius: 8,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#EFEFEF"
+          backgroundColor: friendProfile ? ( follow ? "#EFEFEF" : '#0085e4' ) : "#EFEFEF",
+          borderColor: '#DEDEDE'
         }}
       >
         <View style={{ width: "100%" }}>
@@ -35,10 +37,11 @@ export default function ProfileButtons({ friendProfile }) {
               fontSize: 14,
               fontWeight: "600",
               letterSpacing: 0.5,
-              alignSelf:"center"
+              alignSelf:"center",
+              color: friendProfile ? ( follow ? "black" : "white" ) : "black"
             }}
           >
-            { friendProfile ? "Follow" : "Edit profile" }
+            { friendProfile ? ( follow ? "Following" : "Follow" ) : "Edit profile" }
           </Text>
         </View>
       </TouchableOpacity>

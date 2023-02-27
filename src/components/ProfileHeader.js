@@ -48,9 +48,7 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
               <Text>Following</Text>
             </View>
           </View>
-
         ) : (
-
           <View style={{width: "100%", paddingTop: 3, paddingHorizontal: 15}}>
             <View
               style={{
@@ -86,7 +84,6 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
                 <Text style={{fontWeight: "bold", fontSize: 21}}>118</Text>
                 <Text>Following</Text>
               </View>
-      
             </View>
       
             <View style={{ flexDirection: "column" }} >
@@ -97,7 +94,6 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
                 FullStack Developer
               </Text>
             </View>
-      
           </View>
         )
       }

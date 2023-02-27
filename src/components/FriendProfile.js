@@ -17,7 +17,7 @@ export default function FriendProfile({ route, navigation }) {
         padding: 10,
       }}
     >
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', padding: 6 }}>
         <TouchableOpacity onPress={() => navigation.goBack()} >
           <Octicons name="arrow-left" size={24} color="black" />
         </TouchableOpacity>
@@ -28,10 +28,10 @@ export default function FriendProfile({ route, navigation }) {
             alignItems: 'center',
             width: '92%',
           }}>
-          <Text style={{fontSize: 20, marginLeft: 35, fontWeight: 'bold'}}>
+          <Text style={{fontSize: 20, marginLeft: 35, fontWeight: 'bold', bottom: 2 }}>
             {name}
           </Text>
-          <Feather name="more-vertical" size={20} color='black' />
+          <Feather name="more-vertical" size={20} color='black' style={{ left: 8 }} />
         </View>
       </View>
 

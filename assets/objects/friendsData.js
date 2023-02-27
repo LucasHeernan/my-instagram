@@ -1,4 +1,4 @@
-export const FriendsData = [
+export const friendsData = [
   {
     name: "Ram_Charan",
     accountName: "Ram Charan",
