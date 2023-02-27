@@ -10,6 +10,9 @@ import Shop from "./src/screens/Shop";
 import Profile from "./src/screens/Profile";
 import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
 import Story from "./src/components/Story";
+import Notifications from "./src/components/Notifications";
+import FriendProfile from "./src/components/FriendProfile";
+import ProfileEdit from "./src/components/ProfileEdit";
 
 export default function App() {
 
@@ -107,6 +110,9 @@ export default function App() {
         }}>
         <Stack.Screen name="Bottom" component={BottomTabScreen} />
         <Stack.Screen name="Story" component={Story} />
+        <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen name="FriendProfile" component={FriendProfile} />
+        <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       </Stack.Navigator>
     </NavigationContainer>
   )

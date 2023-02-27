@@ -62,13 +62,14 @@ export default function Profile() {
         </View>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false} >
-        <ProfileHeader />
-        <ProfileButtons />
-        <ProfileStoryHighlights />
-        <ProfileContent />
-      </ScrollView>
-      
+      <View>
+        <ScrollView showsVerticalScrollIndicator={false} >
+          <ProfileHeader />
+          <ProfileButtons />
+          <ProfileStoryHighlights />
+        </ScrollView>
+      </View>
+      <ProfileContent />
 
     </View>
   )

@@ -1,34 +1,16 @@
-import React, { useEffect, useCallback } from "react";
-import { View, Text, StatusBar, ScrollView, TouchableOpacity } from "react-native";
-import { Feather } from '@expo/vector-icons';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from "expo-splash-screen";
+import React from "react";
+import { View, StatusBar, ScrollView, TouchableOpacity, Image } from "react-native";
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import Stories from "../components/Stories";
 import Post from "../components/Post";
 
 export default function Home() {
 
-	const [fonstLoaded] = useFonts({
-		Lobster: require("../../assets/fonts/Lobster-Regular.ttf")
-	});
-
-	useEffect(() => {
-		async function prepare() {
-		  await SplashScreen.preventAutoHideAsync();
-		}
-		prepare();
-	}, []);
-
-  const onLayout = useCallback( async () => {
-    if (fonstLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fonstLoaded]);
-
-  if (!fonstLoaded) return null;
+  const navigation = useNavigation();
 
 	return (
-		<View onLayout={onLayout}
+		<View
 			style={{
 				backgroundColor: "#FFFFFF",
 				height: "100%"
@@ -41,18 +23,29 @@ export default function Home() {
 					flexDirection: "row",
 					alignItems: "center",
 					justifyContent: "space-between",
-					paddingTop: 16,
+					paddingTop: 9,
           paddingBottom: 7
 				}}
 			>
-				<Text
+        <View
           style={{
-						fontFamily: 'Lobster',
-            fontSize: 25,
-						marginLeft: 15
-          }}>
-          Instagram
-        </Text>
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center"
+          }}
+        >
+          <Image
+            source={require("../../assets/fonts/instagram_font_image.png")}
+            style={{
+              width: 115,
+              height: 40,
+              marginLeft: 14
+            }}
+          />
+          <TouchableOpacity>
+            <MaterialCommunityIcons name="chevron-down" size={22} color="black" style={{ top: 2.5 }} />
+          </TouchableOpacity>
+        </View>
 				<View
 					style={{
 						display: "flex",
@@ -63,7 +56,9 @@ export default function Home() {
 					<TouchableOpacity>
 						<Feather name="plus-square" size={24} color="black" style={{ marginHorizontal: 10 }} />
 					</TouchableOpacity>
-					<TouchableOpacity>
+					<TouchableOpacity
+            onPress={() => navigation.push("Notifications")}
+          >
 						<Feather name="heart" size={24} color="black" style={{ marginHorizontal: 10 }} />
 					</TouchableOpacity>
 					<TouchableOpacity>

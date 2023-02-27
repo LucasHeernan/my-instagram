@@ -6,7 +6,9 @@ import { Octicons } from "@expo/vector-icons";
 export default function ProfileStoryHighlights() {
   
   return (
-    <View>
+    <View
+      style={{ paddingBottom: 10 }}
+    >
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { View, StatusBar, TouchableOpacity, Image, Text, TextInput, Animated } from "react-native";
-import { Ionicons, Feather } from "@expo/vector-icons";
+import { Ionicons, Feather, AntDesign, FontAwesome } from "@expo/vector-icons";
 
 export default function Story({ route, navigation }) {
 
   const { name, image } = route.params;
+  const [like, setLike] = useState(false)
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -156,10 +157,13 @@ export default function Story({ route, navigation }) {
             width: 80
           }}
         >
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Feather name="heart" size={24} color= "white" />
+          <TouchableOpacity onPress={() => setLike(!like)}>
+            {
+              like ? <AntDesign name="heart" size={24} color="red" /> :
+              <Feather name="heart" size={24} color="white" />
+            }
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity>
             <Feather name="send" size={23} color= "white" />
           </TouchableOpacity>
         </View>

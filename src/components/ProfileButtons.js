@@ -3,8 +3,9 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function ProfileButtons() {
+export default function ProfileButtons({ friendProfile }) {
 
+  const navigate = useNavigation();
   const [person, setPerson] = useState(false)
 
   return (
@@ -18,6 +19,7 @@ export default function ProfileButtons() {
       }}
     >
       <TouchableOpacity
+        onPress={() => navigate.push("ProfileEdit")}
         style={{
           height: 31,
           width: "43%",
@@ -36,7 +38,7 @@ export default function ProfileButtons() {
               alignSelf:"center"
             }}
           >
-            Edit profile
+            { friendProfile ? "Follow" : "Edit profile" }
           </Text>
         </View>
       </TouchableOpacity>
@@ -58,7 +60,7 @@ export default function ProfileButtons() {
               alignSelf:"center"
             }}
           >
-            Share profile
+            { friendProfile ? "Message" : "Share profile" }
           </Text>
         </View>
       </TouchableOpacity>

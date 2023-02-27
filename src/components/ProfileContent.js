@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Ionicons, Entypo, Feather } from '@expo/vector-icons';
 
@@ -17,7 +17,8 @@ export default function ProfileContent() {
         style={{
           width: 130,
           height: 150,
-          marginVertical: 0.5,
+          marginVertical: 1,
+          marginHorizontal: 1,
           backgroundColor: 'black',
           opacity: 0.1,
         }}
@@ -32,7 +33,6 @@ export default function ProfileContent() {
         style={{
           width: '100%',
           height: '100%',
-          backgroundColor: "green"
         }}
       >
         <View
@@ -43,7 +43,7 @@ export default function ProfileContent() {
             flexWrap: 'wrap',
             flexDirection: 'row',
             paddingVertical: 5,
-            justifyContent: 'space-between',
+            justifyContent: 'space-evenly',
           }}>
           {squares}
         </View>
@@ -68,7 +68,7 @@ export default function ProfileContent() {
             flexWrap: 'wrap',
             flexDirection: 'row',
             paddingVertical: 5,
-            justifyContent: 'space-between'
+            justifyContent: 'space-evenly'
           }}>
           {squares}
         </View>
@@ -93,7 +93,7 @@ export default function ProfileContent() {
             flexWrap: 'wrap',
             flexDirection: 'row',
             paddingVertical: 5,
-            justifyContent: 'space-between',
+            justifyContent: 'space-evenly',
           }}>
           {squares}
         </View>
@@ -102,39 +102,34 @@ export default function ProfileContent() {
   };
 
   return (
-    <View
-      style={{ width: "100%", height: "100%", backgroundColor: "violet" }}
-    >
-
-      <Tab.Navigator
-        screenOptions={({route}) => ({
-          tabBarShowLabel: false,
-          tabBarIndicatorStyle: {
-            backgroundColor: 'black',
-            height: 1.5,
-          },
-            tabBarIcon: ({focused, colour}) => {
-              let iconName;
-              if (route.name === 'Posts') {
-                iconName = focused ? 'ios-apps-sharp' : 'ios-apps-sharp';
-                colour = focused ? 'black' : 'gray';
-                return <Ionicons name={iconName} color={colour} size={22} />;
-              } else if (route.name === 'Video') {
-                return focused ? <Entypo name="youtube" size={24} color="black"/> : <Feather name="youtube" size={24} color="gray"/>
-              } else if (route.name === 'Tags') {
-                iconName = focused ? 'ios-person' : 'ios-person-outline';
-                colour = focused ? 'black' : 'gray';
-                return <Ionicons name={iconName} color={colour} size={22} />
-              }
-              return
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarShowLabel: false,
+        tabBarIndicatorStyle: {
+          backgroundColor: 'black',
+          height: 1.5,
+        },
+          tabBarIcon: ({focused, colour}) => {
+            let iconName;
+            if (route.name === 'Posts') {
+              iconName = focused ? 'ios-apps-sharp' : 'ios-apps-sharp';
+              colour = focused ? 'black' : 'gray';
+              return <Ionicons name={iconName} color={colour} size={22} />;
+            } else if (route.name === 'Video') {
+              return focused ? <Entypo name="youtube" size={24} color="black"/> : <Feather name="youtube" size={24} color="gray"/>
+            } else if (route.name === 'Tags') {
+              iconName = focused ? 'ios-person' : 'ios-person-outline';
+              colour = focused ? 'black' : 'gray';
+              return <Ionicons name={iconName} color={colour} size={22} />
             }
-          })
-        }
-      >
-        <Tab.Screen name="Posts" component={Posts} />
-        <Tab.Screen name="Video" component={Video} />
-        <Tab.Screen name="Tags" component={Tags} />
-      </Tab.Navigator>
-    </View>
+            return
+          }
+        })
+      }
+    >
+      <Tab.Screen name="Posts" component={Posts} />
+      <Tab.Screen name="Video" component={Video} />
+      <Tab.Screen name="Tags" component={Tags} />
+    </Tab.Navigator>
   )
 }
