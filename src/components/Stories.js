@@ -41,11 +41,11 @@ export default function Stories() {
                 >
                   <Entypo
                     name="circle-with-plus"
+                    size={20}
+                    color="#0095fc"
                     style={{
-                      fontSize: 20,
-                      color: "#0095fc",
                       backgroundColor: "white",
-                      borderRadius: 100,
+                      borderRadius: 100
                     }}
                   />
                 </TouchableOpacity>
@@ -67,7 +67,7 @@ export default function Stories() {
                       width: "90%",
                       height: "90%",
                       borderRadius: 100,
-                      backgroundColor: "orange"
+                      backgroundColor: "white"
                     }}
                   />
                 </View>

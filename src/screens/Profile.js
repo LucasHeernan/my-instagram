@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, ScrollView, Text, TouchableOpacity } from "react-native";
 import { Feather, SimpleLineIcons, Octicons } from "@expo/vector-icons";
 import ProfileHeader from "../components/ProfileHeader";
 import ProfileButtons from "../components/ProfileButtons";
 import ProfileStoryHighlights from "../components/ProfileStoryHighlights";
+import Suggested from "../components/Suggested";
 import ProfileContent from "../components/ProfileContent";
 
 export default function Profile() {
+
+  const [suggestions, setSuggestions] = useState(false)
+
   return (
     <View
       style={{
@@ -65,7 +69,8 @@ export default function Profile() {
       <View>
         <ScrollView showsVerticalScrollIndicator={false} >
           <ProfileHeader />
-          <ProfileButtons />
+          <ProfileButtons suggestions={suggestions} setSuggestions={setSuggestions} />
+          { suggestions ? <Suggested /> : null }
           <ProfileStoryHighlights />
         </ScrollView>
       </View>

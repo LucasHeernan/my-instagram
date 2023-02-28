@@ -27,7 +27,7 @@ export default function ProfileEdit({ navigation }) {
           Edit Profile
         </Text>
         <TouchableOpacity onPress={() => { navigation.goBack()}}>
-          <Ionicons name="checkmark" size={30} color="#0085e4" />
+          <Ionicons name="checkmark" size={30} color="#0195F7" />
         </TouchableOpacity>
       </View>
 
@@ -39,7 +39,7 @@ export default function ProfileEdit({ navigation }) {
           />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={{ fontSize: 17, color: "#0085e4", paddingTop: 5 }}>
+          <Text style={{ fontSize: 17, color: "#0195F7", paddingTop: 5 }}>
             Change profile photo
           </Text>
         </TouchableOpacity>
@@ -135,7 +135,7 @@ export default function ProfileEdit({ navigation }) {
             fontSize: 15,
             paddingHorizontal: 15,
             paddingVertical: 12,
-            color: "#0085e4",
+            color: "#0195F7",
             borderTopWidth: 1,
             borderBottomWidth: 1,
             borderColor: "#EFEFEF",
@@ -148,7 +148,7 @@ export default function ProfileEdit({ navigation }) {
             fontSize: 15,
             marginVertical: 15,
             paddingHorizontal: 15,
-            color: "#0085e4",
+            color: "#0195F7",
             borderColor: "#EFEFEF",
           }}
         >
@@ -159,7 +159,7 @@ export default function ProfileEdit({ navigation }) {
             fontSize: 15,
             paddingHorizontal: 15,
             paddingBottom: 15,
-            color: "#0085e4",
+            color: "#0195F7",
             borderBottomWidth: 1,
             borderColor: "#EFEFEF",
           }}

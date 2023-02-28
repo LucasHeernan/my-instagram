@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Octicons, Feather } from "@expo/vector-icons";
 import ProfileHeader from "./ProfileHeader";
 import ProfileButtons from "./ProfileButtons";
+import Suggested from "./Suggested";
 
 export default function FriendProfile({ route, navigation }) {
 
-  const { name, profileImage, follow, post, followers, following } = route.params;
+  const { name, profileImage, post, followers, following } = route.params;
+  const [moreFriends, setMoreFriends] = useState(false);
 
   return (
     <View
@@ -43,7 +45,16 @@ export default function FriendProfile({ route, navigation }) {
         following={following}
       />
 
-      <ProfileButtons friendProfile={true} />
+      <ProfileButtons
+        moreFriends={moreFriends}
+        setMoreFriends={setMoreFriends}
+        name={name}
+        friendProfile={true}
+      />
+
+      {
+        moreFriends ? <Suggested name={name} friendProfile={true} /> : null
+      }
       
     </View>
   )

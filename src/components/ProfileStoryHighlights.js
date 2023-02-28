@@ -7,7 +7,7 @@ export default function ProfileStoryHighlights() {
   
   return (
     <View
-      style={{ paddingBottom: 10 }}
+      style={{ paddingBottom: 8 }}
     >
       <ScrollView
         horizontal={true}

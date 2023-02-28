@@ -3,10 +3,9 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function ProfileButtons({ friendProfile }) {
+export default function ProfileButtons({ suggestions, setSuggestions, moreFriends, setMoreFriends, friendProfile }) {
 
   const navigate = useNavigation();
-  const [person, setPerson] = useState(false);
   const [follow, setFollow] = useState(false);
 
   return (
@@ -27,8 +26,7 @@ export default function ProfileButtons({ friendProfile }) {
           borderRadius: 8,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: friendProfile ? ( follow ? "#EFEFEF" : '#0085e4' ) : "#EFEFEF",
-          borderColor: '#DEDEDE'
+          backgroundColor: friendProfile ? ( follow ? "#EFEFEF" : '#0195F7' ) : "#EFEFEF"
         }}
       >
         <View style={{ width: "100%" }}>
@@ -68,7 +66,7 @@ export default function ProfileButtons({ friendProfile }) {
         </View>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => setPerson(!person)}
+        onPress={() => friendProfile ? setMoreFriends(!moreFriends) : setSuggestions(!suggestions)}
         style={{
           height: 31,
           width: "8%",
@@ -77,7 +75,12 @@ export default function ProfileButtons({ friendProfile }) {
           backgroundColor: "#EFEFEF",
         }}
       >
-        <Ionicons name={ person ? "person-add" : "person-add-outline" } size={16} color="black" style={{ alignSelf:"center" }} />
+        <Ionicons
+          name={ friendProfile ? ( moreFriends ? "person-add" : "person-add-outline" ) : ( suggestions ? "person-add" : "person-add-outline" ) }
+          size={16}
+          color="black"
+          style={{ alignSelf:"center" }}
+        />
       </TouchableOpacity>
     </View>
   )
