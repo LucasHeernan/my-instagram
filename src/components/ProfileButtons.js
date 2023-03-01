@@ -21,12 +21,12 @@ export default function ProfileButtons({ suggestions, setSuggestions, moreFriend
       <TouchableOpacity
         onPress={ friendProfile ? () => setFollow(!follow) : () => navigate.push("ProfileEdit") }
         style={{
-          height: 31,
+          height: friendProfile ? 34 : 31,
           width: "43%",
           borderRadius: 8,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: friendProfile ? ( follow ? "#EFEFEF" : '#0195F7' ) : "#EFEFEF"
+          backgroundColor: friendProfile ? ( follow ? "#EFEFEF" : "#0195F7" ) : "#EFEFEF"
         }}
       >
         <View style={{ width: "100%" }}>
@@ -45,7 +45,7 @@ export default function ProfileButtons({ suggestions, setSuggestions, moreFriend
       </TouchableOpacity>
       <TouchableOpacity
         style={{
-          height: 31,
+          height: friendProfile ? 34 : 31,
           width: "43%",
           borderRadius: 8,
           justifyContent: "center",
@@ -68,7 +68,7 @@ export default function ProfileButtons({ suggestions, setSuggestions, moreFriend
       <TouchableOpacity
         onPress={() => friendProfile ? setMoreFriends(!moreFriends) : setSuggestions(!suggestions)}
         style={{
-          height: 31,
+          height: friendProfile ? 34 : 31,
           width: "8%",
           borderRadius: 8,
           justifyContent: "center",

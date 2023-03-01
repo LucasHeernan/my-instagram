@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import { Entypo } from "@expo/vector-icons";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 import { storyData } from "../../assets/objects/storyData";
 
 export default function Stories() {
@@ -71,12 +71,7 @@ export default function Stories() {
                     }}
                   />
                 </View>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    fontSize: 11
-                  }}
-                >
+                <Text style={{ textAlign: "center", fontSize: 11 }}>
                   {data.name}
                 </Text>
               </View>
@@ -117,12 +112,7 @@ export default function Stories() {
                     }}
                   />
                 </View>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    fontSize: 11
-                  }}
-                >
+                <Text style={{ textAlign: "center", fontSize: 11 }}>
                   {data.name}
                 </Text>
               </TouchableOpacity>

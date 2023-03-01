@@ -43,12 +43,7 @@ export default function SearchContent({ getImage }) {
               }
               {
                 data.id === 1 ? (
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-around"
-                    }}
-                  >
+                  <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
                     <View
                       style={{
                         flexDirection: "row",
@@ -92,12 +87,7 @@ export default function SearchContent({ getImage }) {
               }
               {
                 data.id === 2 ? (
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                    }}
-                  >
+                  <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <TouchableOpacity
                       onLongPress={() => getImage(data.images[2])}
                       onPressOut={() => getImage(null)}

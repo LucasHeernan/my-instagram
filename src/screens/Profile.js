@@ -34,12 +34,7 @@ export default function Profile() {
             marginTop: 3
           }}
         >
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Octicons name="lock" size={14} color="black" style={{ top: 2 }} />
             <Text
               style={{
@@ -55,7 +50,7 @@ export default function Profile() {
               <Feather name="chevron-down" size={17} />
             </TouchableOpacity>
           </View>
-          <View style={{flexDirection: "row", alignItems: "center"}}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <TouchableOpacity>
               <Feather name="plus-square" size={25} style={{ paddingHorizontal: 18 }} />
             </TouchableOpacity>

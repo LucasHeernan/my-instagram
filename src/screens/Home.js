@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StatusBar, ScrollView, TouchableOpacity, Image } from "react-native";
+import { View, StatusBar, ScrollView, TouchableOpacity, Image, Text } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Stories from "../components/Stories";
@@ -50,19 +50,53 @@ export default function Home() {
 					style={{
 						display: "flex",
 						flexDirection: "row",
-						marginRight: 6
+						marginRight: 8,
+            position:"relative"
 					}}
 				>
-					<TouchableOpacity>
+					{/* <TouchableOpacity>
 						<Feather name="plus-square" size={24} color="black" style={{ marginHorizontal: 10 }} />
-					</TouchableOpacity>
+					</TouchableOpacity> */}
 					<TouchableOpacity
             onPress={() => navigation.push("Notifications")}
           >
 						<Feather name="heart" size={24} color="black" style={{ marginHorizontal: 10 }} />
+            <View
+              style={{
+                width: 8,
+                height: 8,
+                backgroundColor: "#FA1E38",
+                borderRadius: 100,
+                position:"absolute",
+                left: 26
+              }}
+            ></View>
 					</TouchableOpacity>
 					<TouchableOpacity>
 						<Feather name="message-circle" size={24} color="black" style={{ marginHorizontal: 10 }} />
+            <View
+                style={{
+                  position: "absolute",
+                  left: 24,
+                  bottom: 13,
+                  width: 16,
+                  height: 16,
+                  backgroundColor: "#FA1E38",
+                  borderRadius: 100,
+                  alignItems: "center",
+                  borderWidth: 0.5,
+                  borderColor: "#D42D47"
+                }}
+              >
+                <Text
+                  style={{
+                    color:"white",
+                    fontSize: 10,
+                    fontWeight: "700",
+                    bottom: 0.5
+                  }}
+                >1</Text>
+              </View>
 					</TouchableOpacity>
 				</View>
 			</View>

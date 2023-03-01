@@ -7,40 +7,48 @@ import Suggested from "./Suggested";
 
 export default function FriendProfile({ route, navigation }) {
 
-  const { name, profileImage, post, followers, following } = route.params;
+  const { name, profileImage, posts, followers, following } = route.params;
   const [moreFriends, setMoreFriends] = useState(false);
 
   return (
     <View
       style={{
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'white',
-        padding: 10,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "white"
       }}
     >
-      <View style={{ flexDirection: 'row', alignItems: 'center', padding: 6 }}>
+      <View
+        style={{
+          paddingHorizontal: 20,
+          paddingVertical: 15,
+          flexDirection: "row",
+          alignItems: "center"
+        }}
+      >
         <TouchableOpacity onPress={() => navigation.goBack()} >
-          <Octicons name="arrow-left" size={24} color="black" />
+          <Octicons name="arrow-left" size={24} color="black" style={{ marginRight: 30 }} />
         </TouchableOpacity>
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            width: '92%',
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "85%"
           }}>
-          <Text style={{fontSize: 20, marginLeft: 35, fontWeight: 'bold', bottom: 2 }}>
+          <Text style={{ fontSize: 20, fontWeight: "bold", bottom: 2 }}>
             {name}
           </Text>
-          <Feather name="more-vertical" size={20} color='black' style={{ left: 8 }} />
+          <TouchableOpacity>
+            <Feather name="more-vertical" size={20} color="black" />
+          </TouchableOpacity>
         </View>
       </View>
 
       <ProfileHeader
         name={name}
         profileImage={profileImage}
-        post={post}
+        posts={posts}
         followers={followers}
         following={following}
       />

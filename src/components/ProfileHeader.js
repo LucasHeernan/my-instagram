@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-export default function ProfileHeader({ name, profileImage, post, followers, following }) {
+export default function ProfileHeader({ name, profileImage, posts, followers, following }) {
 
   return (
     <>
@@ -12,10 +12,10 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-around",
-              paddingVertical: 20
+              marginVertical: 7
             }}
           >
-            <View style={{ alignItems: "center" }}>
+            <View>
               <Image
                 source={profileImage}
                 style={{
@@ -26,17 +26,12 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
                   top: 7
                 }}
               />
-              <Text
-                style={{
-                  fontWeight: "bold",
-                  top: 10
-                }}
-              >
+              <Text style={{ fontWeight: "bold", paddingTop: 10 }}>
                 {name}
               </Text>
             </View>
             <View style={{ alignItems: "center" }}>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>{post}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 18 }}>{posts}</Text>
               <Text>Posts</Text>
             </View>
             <View style={{ alignItems: "center" }}>
@@ -49,7 +44,7 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
             </View>
           </View>
         ) : (
-          <View style={{width: "100%", paddingTop: 3, paddingHorizontal: 15}}>
+          <View style={{ width: "100%", paddingTop: 3, paddingHorizontal: 15 }}>
             <View
               style={{
                 flexDirection: "row",
@@ -72,16 +67,16 @@ export default function ProfileHeader({ name, profileImage, post, followers, fol
                 />
               </View>
       
-              <View style={{alignItems: "center"}}>
-                <Text style={{fontWeight: "bold", fontSize: 21}}>0</Text>
+              <View style={{ alignItems: "center" }}>
+                <Text style={{ fontWeight: "bold", fontSize: 21 }}>0</Text>
                 <Text>Posts</Text>
               </View>
-              <View style={{alignItems: "center"}}>
-                <Text style={{fontWeight: "bold", fontSize: 21}}>39</Text>
+              <View style={{ alignItems: "center" }}>
+                <Text style={{ fontWeight: "bold", fontSize: 21 }}>39</Text>
                 <Text>Followers</Text>
               </View>
-              <View style={{alignItems: "center"}}>
-                <Text style={{fontWeight: "bold", fontSize: 21}}>118</Text>
+              <View style={{ alignItems: "center" }}>
+                <Text style={{ fontWeight: "bold", fontSize: 21 }}>118</Text>
                 <Text>Following</Text>
               </View>
             </View>

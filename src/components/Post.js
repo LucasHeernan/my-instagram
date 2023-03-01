@@ -13,11 +13,7 @@ export default function Post() {
         postData.map((data, index) => {
           const [like, setLike] = useState(data.isLiked);
           return (
-            <View
-              key={index}
-              style={{
-                paddingBottom: 10
-              }}
+            <View key={index} style={{ paddingBottom: 10 }}
             >
               <View
                 style={{
@@ -28,11 +24,7 @@ export default function Post() {
                   paddingVertical: 10
                 }}
               >
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center"
-                  }}
+                <View style={{ flexDirection: "row", alignItems: "center" }}
                 >
                   <Image
                     source={data.postPersonImage}
@@ -43,13 +35,13 @@ export default function Post() {
                     }}
                   />
                   <View style={{ paddingLeft: 5 }} >
-                    <Text style={{ fontSize: 15, fontWeight: "500"}} >
+                    <Text style={{ fontSize: 15, fontWeight: "500" }} >
                       {data.postTitle}
                     </Text>
                   </View>
                 </View>
                 <TouchableOpacity>
-                  <Feather name="more-vertical" style={{fontSize: 20}} />
+                  <Feather name="more-vertical" style={{ fontSize: 20}} />
                 </TouchableOpacity>
               </View>
 
@@ -78,24 +70,15 @@ export default function Post() {
                   paddingVertical: 10
                 }}
               >
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center"
-                  }}
-                >
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <TouchableOpacity onPress={() => setLike(!like)}>
                     {
-                      like ? <AntDesign name="heart" size={25} color="red" style={{paddingRight: 16}}/> :
-                      <Feather name="heart" size={25} color="black" style={{paddingRight: 16}}/>
+                      like ? <AntDesign name="heart" size={25} color="red" style={{ paddingRight: 16 }}/> :
+                      <Feather name="heart" size={25} color="black" style={{ paddingRight: 16 }}/>
                     }
                   </TouchableOpacity>
                   <TouchableOpacity>
-                    <Feather
-                      name="message-circle"
-                      size={25}
-                      style={{ paddingRight: 15 }}
-                    />
+                    <Feather name="message-circle" size={25} style={{ paddingRight: 15 }}/>
                   </TouchableOpacity>
                   <TouchableOpacity>
                     <Feather name="send" size={23} />
@@ -109,46 +92,31 @@ export default function Post() {
                 </TouchableOpacity>
               </View>
 
-              <View style={{paddingHorizontal: 15}} >
+              <View style={{ paddingHorizontal: 15 }} >
                 <Text>
                   Liked by { like ? "you and " : ""}
                   { like ? data.likes + 1 : data.likes } others
                 </Text>
                 <Text
                   style={{
-                    fontWeight: '700',
+                    fontWeight: "700",
                     fontSize: 14,
                     paddingVertical: 2,
                   }}>
                   If enjoy the app ! Please like and share 😉
                 </Text>
-                <Text
-                  style={{
-                    opacity: 0.4,
-                    paddingVertical: 2
-                  }}
-                >
+                <Text style={{ opacity: 0.4, paddingVertical: 2 }}>
                   View all comments
                 </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center'
-                    }}
-                  >
+                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Image
                       source={data.postPersonImage}
                       style={{
                         width: 25,
                         height: 25,
                         borderRadius: 100,
-                        backgroundColor: 'orange',
+                        backgroundColor: "orange",
                         marginRight: 10
                       }}
                     />
@@ -156,12 +124,7 @@ export default function Post() {
                       placeholder="Add a comment... "
                     />
                   </View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center'
-                    }}
-                  >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <TouchableOpacity style={{ paddingRight: 9 }}>
                       <Text>❤️</Text>
                     </TouchableOpacity>
@@ -169,12 +132,7 @@ export default function Post() {
                       <Text>🙌</Text>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                      <MaterialCommunityIcons
-                        name="plus-circle-outline"
-                        size={16}
-                        color="black"
-                        style={{ opacity: 0.4 }}
-                      />
+                      <MaterialCommunityIcons name="plus-circle-outline" size={16} color="black" style={{ opacity: 0.4 }}/>
                     </TouchableOpacity>
                   </View>
                 </View>

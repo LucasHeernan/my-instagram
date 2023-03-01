@@ -2,34 +2,33 @@ import React, { useState } from "react";
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import { friendsData } from "../../assets/objects/friendsData";
 import { useNavigation } from "@react-navigation/native";
-import { Octicons, AntDesign } from "@expo/vector-icons";
+import { Octicons, Ionicons } from "@expo/vector-icons";
+import NotificationsContent from "./NotificationsContent";
 
 export default function Notifications() {
 
   const navigation = useNavigation();
 
   return (
-    <View
-      style={{ width: "100%", height: "100%", backgroundColor: "white" }}
-    >
+    <View style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
       <View
-        style={{ paddingHorizontal: 20, paddingVertical: 15, flexDirection: "row", alignItems: "center" }}
+        style={{
+          paddingHorizontal: 20,
+          paddingVertical: 15,
+          flexDirection: "row",
+          alignItems: "center"
+        }}
       >
         <TouchableOpacity onPress={() => navigation.goBack()} >
           <Octicons name="arrow-left" size={24} color="black" style={{ marginRight: 30 }} />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-          }}
-        >
+        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
           Notifications
         </Text>
       </View>
       
       <ScrollView style={{ marginHorizontal: 15 }} showsVerticalScrollIndicator={false}>
-        <View style={{width: "100%", paddingVertical: 10}}>
+        <View style={{ width: "100%", paddingVertical: 10 }}>
           <View
             style={{
               flexDirection: "row",
@@ -60,7 +59,7 @@ export default function Notifications() {
                   alignItems: "center",
                   justifyContent: "center",
                   borderWidth: 0.5,
-                  borderColor: "#d42d47"
+                  borderColor: "#D42D47"
                 }}
               >
                 <Text
@@ -86,69 +85,15 @@ export default function Notifications() {
             const [follow, setFollow] = useState(data.follow);
             return (
               <View key={index} style={{ width: "100%" }}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingVertical: 12
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.push("FriendProfile", {
-                        name: data.name,
-                        accountName: data.accountName,
-                        profileImage: data.profileImage,
-                        follow: follow,
-                        post: data.posts,
-                        followers: data.followers,
-                        following: data.following,
-                      })
-                    }
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      maxWidth: "59%"
-                    }}
-                  >
-                    <Image
-                      source={data.profileImage}
-                      style={{
-                        width: 45,
-                        height: 45,
-                        borderRadius: 100,
-                        marginRight: 17,
-                      }}
-                    />
-                    <Text style={{fontSize: 15}}>
-                      <Text style={{fontWeight: "bold"}}>{data.name}</Text>, who
-                      you might know, is on instagram
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => setFollow(!follow)}
-                    style={{width: follow ? 77 : 73}}
-                  >
-                    <View
-                      style={{
-                        width: "100%",
-                        height: 30,
-                        borderRadius: 7,
-                        backgroundColor: follow ? null : "#0195F7",
-                        borderWidth: follow ? 1 : 0,
-                        borderColor: follow ? "#DEDEDE" : null,
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Text style={{ color: follow ? "black" : "white" }}>
-                        { follow ? "Following" : "Follow" }
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
+                <NotificationsContent
+                  name={data.name}
+                  profileImage={data.profileImage}
+                  follow={follow}
+                  setFollow={setFollow}
+                  posts={data.posts}
+                  followers={data.followers}
+                  following={data.following}
+                />
               </View>
             );
           })
@@ -160,69 +105,15 @@ export default function Notifications() {
             const [follow, setFollow] = useState(data.follow);
             return (
               <View key={index} style={{ width: "100%" }}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingVertical: 12
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.push("FriendProfile", {
-                        name: data.name,
-                        accountName: data.accountName,
-                        profileImage: data.profileImage,
-                        follow: follow,
-                        post: data.posts,
-                        followers: data.followers,
-                        following: data.following,
-                      })
-                    }
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      maxWidth: "59%"
-                    }}
-                  >
-                    <Image
-                      source={data.profileImage}
-                      style={{
-                        width: 45,
-                        height: 45,
-                        borderRadius: 100,
-                        marginRight: 17,
-                      }}
-                    />
-                    <Text style={{ fontSize: 15 }}>
-                      <Text style={{ fontWeight: "bold" }}>{data.name}</Text>, who
-                      you might know, is on instagram
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => setFollow(!follow)}
-                    style={{ width: follow ? 77 : 73 }}
-                  >
-                    <View
-                      style={{
-                        width: "100%",
-                        height: 30,
-                        borderRadius: 7,
-                        backgroundColor: follow ? null : "#0195F7",
-                        borderWidth: follow ? 1 : 0,
-                        borderColor: follow ? "#DEDEDE" : null,
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Text style={{ color: follow ? "black" : "white" }}>
-                        {follow ? "Following" : "Follow"}
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
+                <NotificationsContent
+                  name={data.name}
+                  profileImage={data.profileImage}
+                  follow={follow}
+                  setFollow={setFollow}
+                  posts={data.posts}
+                  followers={data.followers}
+                  following={data.following}
+                />
               </View>
             );
           })
@@ -234,90 +125,34 @@ export default function Notifications() {
             const [follow, setFollow] = useState(data.follow);
             return (
               <View key={index} style={{ width: "100%" }}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingVertical: 12
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.push("FriendProfile", {
-                        name: data.name,
-                        accountName: data.accountName,
-                        profileImage: data.profileImage,
-                        follow: follow,
-                        post: data.posts,
-                        followers: data.followers,
-                        following: data.following,
-                      })
-                    }
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      maxWidth: "59%"
-                    }}
-                  >
-                    <Image
-                      source={data.profileImage}
-                      style={{
-                        width: 45,
-                        height: 45,
-                        borderRadius: 100,
-                        marginRight: 17,
-                      }}
-                    />
-                    <Text style={{ fontSize: 15 }}>
-                      <Text style={{ fontWeight: "bold" }}>{data.name}</Text>, who
-                      you might know, is on instagram
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => setFollow(!follow)}
-                    style={{ width: follow ? 77 : 73 }}
-                  >
-                    <View
-                      style={{
-                        width: "100%",
-                        height: 30,
-                        borderRadius: 7,
-                        backgroundColor: follow ? null : "#0195F7",
-                        borderWidth: follow ? 1 : 0,
-                        borderColor: follow ? "#DEDEDE" : null,
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Text style={{ color: follow ? "black" : "white" }}>
-                        { follow ? "Following" : "Follow" }
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
+                <NotificationsContent
+                  name={data.name}
+                  profileImage={data.profileImage}
+                  follow={follow}
+                  setFollow={setFollow}
+                  posts={data.posts}
+                  followers={data.followers}
+                  following={data.following}
+                />
               </View>
             );
           })
         }
 
-        <Text style={{ fontWeight: "bold", paddingVertical: 10 }}>
-          Suggestions for you
-        </Text>
+        <Text style={{ fontWeight: "bold", paddingVertical: 10 }}>Suggestions for you</Text>
         {
           friendsData.slice(6.12).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
             const [close, setClose] = useState(false);
             return (
-              <View key={index}>
+              <View key={index} >
                 { close ? null : (
                   <View
                     style={{
                       paddingVertical: 10,
                       flexDirection: "row",
                       width: "100%",
-                      justifyContent: "space-between",
+                      justifyContent: "space-between"
                     }}
                   >
                     <View>
@@ -327,32 +162,28 @@ export default function Notifications() {
                             name: data.name,
                             profileImage: data.profileImage,
                             follow: follow,
-                            post: data.posts,
+                            posts: data.posts,
                             followers: data.followers,
                             following: data.following,
                           })
                         }
                         style={{
                           flexDirection: "row",
-                          alignItems: "center",
-                          maxWidth: "64%",
+                          maxWidth: "70%"
                         }}
                       >
                         <Image
                           source={data.profileImage}
                           style={{
-                            width: 45,
-                            height: 45,
+                            width: 55,
+                            height: 55,
                             borderRadius: 100,
                             marginRight: 10,
                           }}
                         />
-                        <View style={{ width: "100%" }}>
+                        <View style={{ width: "100%", justifyContent:"center" }}>
                           <Text style={{ fontSize: 14, fontWeight: "bold" }}>
                             {data.name}
-                          </Text>
-                          <Text style={{ fontSize: 12, opacity: 0.5 }}>
-                            {data.accountName}
                           </Text>
                           <Text style={{ fontSize: 12, opacity: 0.5 }}>
                             Sugggested for you
@@ -360,6 +191,7 @@ export default function Notifications() {
                         </View>
                       </TouchableOpacity>
                     </View>
+
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                       { follow ? 
                         (
@@ -382,7 +214,7 @@ export default function Notifications() {
                               }}
                             >
                               <Text style={{ color: follow ? "black" : "white" }}>
-                                {follow ? "following" : "follow"}
+                                { follow ? "following" : "follow" }
                               </Text>
                             </View>
                           </TouchableOpacity>
@@ -391,7 +223,7 @@ export default function Notifications() {
                             <TouchableOpacity
                               onPress={() => setFollow(!follow)}
                               style={{
-                                width: follow ? 90 : 68,
+                                width: follow ? 90 : 74
                               }}
                             >
                               <View
@@ -407,14 +239,15 @@ export default function Notifications() {
                                 }}
                               >
                                 <Text style={{ color: follow ? "black" : "white" }}>
-                                  {follow ? "following" : "follow"}
+                                  { follow ? "following" : "follow" }
                                 </Text>
                               </View>
                             </TouchableOpacity>
                             <TouchableOpacity
                               onPress={() => setClose(true)}
-                              style={{paddingHorizontal: 10}}>
-                              <AntDesign name="close" size={14} color="black" style={{ opacity: 0.8}} />
+                              style={{ paddingHorizontal: 5 }}
+                            >
+                              <Ionicons name="close" size={16} color="black" style={{ opacity: 0.6 }} />
                             </TouchableOpacity>
                           </>
                         )

@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, ScrollView, Text } from 'react-native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Ionicons, Entypo, Feather } from '@expo/vector-icons';
+import React from "react";
+import { View, ScrollView } from "react-native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { Ionicons, Entypo, Feather } from "@expo/vector-icons";
 
 export default function ProfileContent() {
 
@@ -19,7 +19,7 @@ export default function ProfileContent() {
           height: 150,
           marginVertical: 1,
           marginHorizontal: 1,
-          backgroundColor: 'black',
+          backgroundColor: "black",
           opacity: 0.1,
         }}
       ></View>
@@ -30,20 +30,17 @@ export default function ProfileContent() {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
+        style={{ width: "100%", height: "100%" }}
       >
         <View
           style={{
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'white',
-            flexWrap: 'wrap',
-            flexDirection: 'row',
+            width: "100%",
+            height: "100%",
+            backgroundColor: "white",
+            flexWrap: "wrap",
+            flexDirection: "row",
             paddingVertical: 5,
-            justifyContent: 'space-evenly',
+            justifyContent: "space-evenly",
           }}>
           {squares}
         </View>
@@ -55,20 +52,17 @@ export default function ProfileContent() {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
+        style={{ width: "100%", height: "100%" }}
       >
         <View
           style={{
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'white',
-            flexWrap: 'wrap',
-            flexDirection: 'row',
+            width: "100%",
+            height: "100%",
+            backgroundColor: "white",
+            flexWrap: "wrap",
+            flexDirection: "row",
             paddingVertical: 5,
-            justifyContent: 'space-evenly'
+            justifyContent: "space-evenly"
           }}>
           {squares}
         </View>
@@ -80,20 +74,17 @@ export default function ProfileContent() {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{
-          width: '100%',
-          height: '100%'
-        }}
+        style={{ width: "100%", height: "100%" }}
       >
         <View
           style={{
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'white',
-            flexWrap: 'wrap',
-            flexDirection: 'row',
+            width: "100%",
+            height: "100%",
+            backgroundColor: "white",
+            flexWrap: "wrap",
+            flexDirection: "row",
             paddingVertical: 5,
-            justifyContent: 'space-evenly',
+            justifyContent: "space-evenly",
           }}>
           {squares}
         </View>
@@ -106,20 +97,20 @@ export default function ProfileContent() {
       screenOptions={({route}) => ({
         tabBarShowLabel: false,
         tabBarIndicatorStyle: {
-          backgroundColor: 'black',
+          backgroundColor: "black",
           height: 1.5,
         },
           tabBarIcon: ({focused, colour}) => {
             let iconName;
-            if (route.name === 'Posts') {
-              iconName = focused ? 'ios-apps-sharp' : 'ios-apps-sharp';
-              colour = focused ? 'black' : 'gray';
+            if (route.name === "Posts") {
+              iconName = focused ? "ios-apps-sharp" : "ios-apps-sharp";
+              colour = focused ? "black" : "gray";
               return <Ionicons name={iconName} color={colour} size={22} />;
-            } else if (route.name === 'Video') {
+            } else if (route.name === "Video") {
               return focused ? <Entypo name="youtube" size={24} color="black"/> : <Feather name="youtube" size={24} color="gray"/>
-            } else if (route.name === 'Tags') {
-              iconName = focused ? 'ios-person' : 'ios-person-outline';
-              colour = focused ? 'black' : 'gray';
+            } else if (route.name === "Tags") {
+              iconName = focused ? "ios-person" : "ios-person-outline";
+              colour = focused ? "black" : "gray";
               return <Ionicons name={iconName} color={colour} size={22} />
             }
             return

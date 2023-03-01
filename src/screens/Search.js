@@ -74,7 +74,10 @@ export default function Search() {
                   </Text>
                 </View>
               </View>
-              <Image source={image} style={{width: "100%", height: "80%"}} />
+              <Image
+                source={image}
+                style={{ width: "100%", height: "80%" }}
+              />
               <View
                 style={{
                   justifyContent: "space-around",

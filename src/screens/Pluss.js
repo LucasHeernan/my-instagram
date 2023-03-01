@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export default function Shop() {
+export default function Pluss() {
   return (
     <View>
-      <Text>Shops</Text>
+      <Text>Acá tengo que poner algo pm</Text>
     </View>
   )
 }

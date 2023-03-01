@@ -6,7 +6,7 @@ import { View, Image } from "react-native";
 import Home from "./src/screens/Home";
 import Search from "./src/screens/Search";
 import Reels from "./src/screens/Reels";
-import Shop from "./src/screens/Shop";
+import Pluss from "./src/screens/Pluss";
 import Profile from "./src/screens/Profile";
 import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
 import Story from "./src/components/Story";
@@ -34,14 +34,14 @@ export default function App() {
             let iconName;
             if (route.name === "Home") {
               iconName = focused ? "home" : "home-outline";
-              return <Ionicons name={iconName} size={size}/>;
+              return <Ionicons name={iconName} size={size} style={{ bottom: 0.5 }} />;
             } else if (route.name === "Search") {
-              return focused ? <FontAwesome name="search" size={size} color="black" /> : <Ionicons name="search" size={size} color="black" />
+              return focused ? <FontAwesome name="search" size={size} /> : <Ionicons name="search" size={size} />
             } else if (route.name === "Reels") {
-              return focused ? <Entypo name="youtube" size={size} color="black" /> : <Feather name="youtube" size={size} color="black" />
-            } else if (route.name === "Shop") {
-              iconName = focused ? "shopping" : "shopping-outline";
-              return <MaterialCommunityIcons name={iconName} size={size} color="black" />
+              return focused ? <Entypo name="youtube" size={size} /> : <Feather name="youtube" size={size} />
+            } else if (route.name === "Pluss") {
+              iconName = focused ? "plus-square" : "plus-square-o"
+              return focused ? <FontAwesome name={iconName} size={23} style={{ bottom: 1 }} /> : <FontAwesome name={iconName} size={size} />
             } else if (route.name === "Profile") {
               return iconName = focused ? (
                 <View
@@ -95,8 +95,8 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
+        <Tab.Screen name="Pluss" component={Pluss} />
         <Tab.Screen name="Reels" component={Reels} />
-        <Tab.Screen name="Shop" component={Shop} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
     );

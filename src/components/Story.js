@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, StatusBar, TouchableOpacity, Image, Text, TextInput, Animated } from "react-native";
-import { Ionicons, Feather, AntDesign, FontAwesome } from "@expo/vector-icons";
+import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 
 export default function Story({ route, navigation }) {
 

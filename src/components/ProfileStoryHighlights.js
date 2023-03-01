@@ -6,15 +6,11 @@ import { Octicons } from "@expo/vector-icons";
 export default function ProfileStoryHighlights() {
   
   return (
-    <View
-      style={{ paddingBottom: 8 }}
-    >
+    <View style={{ paddingBottom: 8 }}>
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        style={{
-          paddingVertical: 12
-        }}
+        style={{ paddingVertical: 12 }}
       >
         {
           iconsData.map((data, index) => {
@@ -65,12 +61,7 @@ export default function ProfileStoryHighlights() {
                         backgroundColor: "white"
                       }}
                     >
-                      <Text
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      >
+                      <Text style={{ width: "100%", height: "100%" }}>
                         {data.icon}
                       </Text>
                     </View>
@@ -87,10 +78,7 @@ export default function ProfileStoryHighlights() {
                     >
                       <Image
                         source={data.icon}
-                        style={{
-                          width: "100%",
-                          height: "100%"
-                        }}
+                        style={{ width: "100%", height: "100%" }}
                       />
                     </View>
                   )

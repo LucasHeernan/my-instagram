@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, Dimensions, TouchableOpacity, Image } from "react-native";
 import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 
-export default function SingleReel({item}) {
+export default function SingleReel({ item }) {
 
   const { width, height } = Dimensions.get("window");
 
@@ -51,7 +51,7 @@ export default function SingleReel({item}) {
 
       <View
         style={{
-          position: 'absolute',
+          position: "absolute",
           width: width,
           zIndex: 1,
           padding: 10,
@@ -61,8 +61,8 @@ export default function SingleReel({item}) {
         <View
           style={{
             width: 150,
-            flexDirection: 'row',
-            alignItems: 'center'
+            flexDirection: "row",
+            alignItems: "center"
           }}
         >
           <TouchableOpacity
@@ -70,55 +70,57 @@ export default function SingleReel({item}) {
               width: 32,
               height: 32,
               borderRadius: 100,
-              backgroundColor: 'white',
+              backgroundColor: "white",
               margin: 10,
             }}
           >
             <Image
               source={item.postProfile}
               style={{
-                width: '100%',
-                height: '100%',
-                resizeMode: 'cover',
+                width: "100%",
+                height: "100%",
+                resizeMode: "cover",
                 borderRadius: 100,
               }}
             />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={{color: 'white', fontSize: 16}}>{item.title}</Text>
+            <Text style={{ color: "white", fontSize: 16 }}>{item.title}</Text>
           </TouchableOpacity>
         </View>
-        <Text style={{color: 'white', fontSize: 14, marginHorizontal: 10}}>
+        <Text style={{ color: "white", fontSize: 14, marginHorizontal: 10 }}>
           {item.description}
         </Text>
-        <View style={{flexDirection: 'row', margin: 10}}>
+        <View style={{ flexDirection: "row", margin: 10 }}>
           <Ionicons name="ios-musical-note" size={16} color="white" />
-          <Text style={{color: 'white'}}>Original Audio</Text>
+          <Text style={{ color: "white" }}>
+            Original Audio
+          </Text>
         </View>
       </View>
 
       <View
         style={{
-          position: 'absolute',
-          bottom: 50, //edited
+          position: "absolute",
+          bottom: 50,
           right: 0,
           zIndex: 1
         }}
       >
-        <TouchableOpacity onPress={() => setLike(!like)} style={{padding: 10}}>
+        <TouchableOpacity onPress={() => setLike(!like)} style={{ padding: 10 }}>
           {
             like ? <AntDesign name="heart" color="red" size={24} /> : <Feather name="heart" color="white" size={24} />
           }
         </TouchableOpacity>
-        <Text style={{color: 'white', alignSelf:"center" }}>{item.likes}</Text>
-        <TouchableOpacity style={{padding: 10}}>
+        <Text style={{ color: "white", alignSelf:"center" }}>{item.likes}</Text>
+        <TouchableOpacity style={{ padding: 10 }}>
           <Feather name="message-circle" size={25} color="white" />
         </TouchableOpacity>
-        <Text style={{color: 'white', alignSelf:"center" }}>{item.messages}</Text>
-        <TouchableOpacity style={{padding: 10}}>
+        <Text style={{ color: "white", alignSelf:"center" }}>{item.messages}</Text>
+        <TouchableOpacity style={{ padding: 10 }}>
           <Feather name="send" size={22} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity style={{padding: 10, alignSelf:"center"}}>
+        <TouchableOpacity style={{ padding: 10, alignSelf:"center" }}>
           <Feather name="more-vertical" size={20} color="white" />
         </TouchableOpacity>
         <View
@@ -127,16 +129,16 @@ export default function SingleReel({item}) {
             height: 32,
             borderRadius: 10,
             borderWidth: 2,
-            borderColor: 'white',
+            borderColor: "white",
             margin: 10,
           }}>
           <Image
             source={item.postProfile}
             style={{
-              width: '100%',
-              height: '100%',
+              width: "100%",
+              height: "100%",
               borderRadius: 10,
-              resizeMode: 'cover',
+              resizeMode: "cover",
             }}
           />
         </View>

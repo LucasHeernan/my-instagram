@@ -6,12 +6,7 @@ import { AntDesign } from "@expo/vector-icons";
 export default function Suggested({ name, friendProfile }) {
 
   return (
-    <View
-      style={{
-        marginLeft: 11,
-        marginBottom: 15
-      }}
-    >
+    <View style={{ marginLeft: 11, marginBottom: 15 }}>
       <View
         style={{
           flexDirection: "row",
@@ -39,22 +34,22 @@ export default function Suggested({ name, friendProfile }) {
                     width: 155,
                     height: 205,
                     margin: 2,
-                    alignItems: 'center',
+                    alignItems: "center",
                     borderWidth: 0.5,
-                    borderColor: '#DEDEDE',
+                    borderColor: "#DEDEDE",
                     borderRadius: 5,
-                    position: 'relative'
+                    position: "relative"
                   }}
                 >
                   <TouchableOpacity
                     onPress={() => setClose(true)}
                     style={{
-                      position: 'absolute',
+                      position: "absolute",
                       top: 5,
                       right: 5,
                     }}
                   >
-                    <AntDesign name="close" size={18} color='black' style={{ opacity: 0.5 }} />
+                    <AntDesign name="close" size={18} color="black" style={{ opacity: 0.5 }} />
                   </TouchableOpacity>
                   <Image
                     source={data.profileImage}
@@ -66,13 +61,13 @@ export default function Suggested({ name, friendProfile }) {
                       marginBottom: 9
                     }}
                   />
-                  <Text style={{fontWeight: "500", fontSize: 14 }}>
+                  <Text style={{ fontWeight: "500", fontSize: 14 }}>
                     {data.name}
                   </Text>
-                  <Text style={{fontSize: 11, opacity: 0.5}}>{data.accountName}</Text>
+                  <Text style={{ fontSize: 11, opacity: 0.5 }}>{data.accountName}</Text>
                   <View
                     style={{
-                      width: '95%',
+                      width: "95%",
                       padding: 10,
                       position: "absolute",
                       bottom: 2
@@ -81,18 +76,18 @@ export default function Suggested({ name, friendProfile }) {
                     <TouchableOpacity
                       onPress={() => setFollow(!follow)}
                       style={{
-                        width: '100%',
+                        width: "100%",
                         height: 30,
                         borderRadius: 8,
-                        backgroundColor: follow ? null : '#0195F7',
+                        backgroundColor: follow ? null : "#0195F7",
                         borderWidth: follow ? 1 : 0,
-                        borderColor: '#DEDEDE',
-                        justifyContent: 'center',
-                        alignItems: 'center',
+                        borderColor: "#DEDEDE",
+                        justifyContent: "center",
+                        alignItems: "center",
                       }}
                     >
-                      <Text style={{color: follow ? 'black' : 'white'}}>
-                        {follow ? 'Following' : 'Follow'}
+                      <Text style={{ color: follow ? "black" : "white" }}>
+                        { follow ? "Following" : "Follow" }
                       </Text>
                     </TouchableOpacity>
                   </View>
