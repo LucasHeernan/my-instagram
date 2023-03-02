@@ -4,10 +4,13 @@ import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 
 export default function Story({ route, navigation }) {
 
-  const { name, image } = route.params;
+  const { name, image, setStory  } = route.params;
   const [like, setLike] = useState(false)
 
   useEffect(() => {
+
+    setStory(true)
+
     let timer = setTimeout(() => {
       navigation.goBack();
     }, 8000);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -22,13 +22,14 @@ export default function Stories() {
       >
         {
           storyData.map((data, index) => {
+            const [story, setStory] = useState(false);
             return data.id === 29 ? (
               <View
                 key={index}
                 style={{
-                  flexDirection: "column",
                   paddingHorizontal: 8,
-                  position: "relative"
+                  position: "relative",
+                  justifyContent: "space-between"
                 }}
               >
                 <TouchableOpacity
@@ -56,8 +57,7 @@ export default function Stories() {
                     backgroundColor: "white",
                     borderRadius: 100,
                     justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 2
+                    alignItems: "center"
                   }}
                 >
                   <Image
@@ -71,48 +71,83 @@ export default function Stories() {
                     }}
                   />
                 </View>
-                <Text style={{ textAlign: "center", fontSize: 11 }}>
+                <Text style={{ textAlign: "center", fontSize: 11, fontWeight:"500" }}>
                   {data.name}
                 </Text>
               </View>
             ) : (
               <TouchableOpacity
                 key={index}
+                activeOpacity={0.7}
                 onPress={() => navigation.push("Story", {
                   name: data.name,
                   image: data.image,
+                  setStory
                 })}
                 style={{
                   flexDirection: "column",
                   paddingHorizontal: 8,
-                  position: "relative"
+                  position: "relative",
                 }}
               >
                 <View
                   style={{
-                    width: 72,
-                    height: 72,
+                    width: 75,
+                    height: 75,
                     backgroundColor: "white",
-                    borderWidth: 2.4,
                     borderRadius: 100,
-                    borderColor: "#c13584",
                     justifyContent: "center",
                     alignItems: "center",
                     marginBottom: 2
                   }}
                 >
+                  <View
+                    style={{
+                      width: story ? "95.5%" : "93%",
+                      height: story ? "95.5%" : "93%",
+                      borderRadius: 100,
+                      backgroundColor: "white",
+                      position: "absolute",
+                      zIndex: 1
+                    }}
+                  >
+                  </View>
+                  {
+                    story ?
+                      <View
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: 100,
+                          backgroundColor: "#E6E6E6"
+                        }}
+                      ></View> : 
+                      <Image
+                        source={require("../../assets/story.png")}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          resizeMode: "contain",
+                        }}
+                      />
+                  }
+                  
                   <Image
                     source={data.image}
                     style={{
                       resizeMode: "cover",
-                      width: "91%",
-                      height: "91%",
+                      width: "85%",
+                      height: "85%",
                       borderRadius: 100,
-                      backgroundColor: "white"
+                      backgroundColor: "white",
+                      borderWidth: story ? 0.5 : 0,
+                      borderColor: story ? "#BDBDBD" : null,
+                      position: "absolute",
+                      zIndex: 1
                     }}
                   />
                 </View>
-                <Text style={{ textAlign: "center", fontSize: 11 }}>
+                <Text style={{ textAlign: "center", fontSize: 11, fontWeight:"500" }}>
                   {data.name}
                 </Text>
               </TouchableOpacity>

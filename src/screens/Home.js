@@ -54,9 +54,6 @@ export default function Home() {
             position:"relative"
 					}}
 				>
-					{/* <TouchableOpacity>
-						<Feather name="plus-square" size={24} color="black" style={{ marginHorizontal: 10 }} />
-					</TouchableOpacity> */}
 					<TouchableOpacity
             onPress={() => navigation.push("Notifications")}
           >
@@ -72,7 +69,9 @@ export default function Home() {
               }}
             ></View>
 					</TouchableOpacity>
-					<TouchableOpacity>
+					<TouchableOpacity
+            onPress={() => navigation.push("Message")}
+          >
 						<Feather name="message-circle" size={24} color="black" style={{ marginHorizontal: 10 }} />
             <View
                 style={{

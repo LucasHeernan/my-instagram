@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function NotificationsContent({ name, profileImage, follow, setFollow, posts, followers, following }) {
+export default function NotificationsContent({ name, profileImage, week, follow, setFollow, posts, followers, following }) {
 
   const navigation = useNavigation();
   
@@ -42,9 +42,9 @@ export default function NotificationsContent({ name, profileImage, follow, setFo
             marginRight: 17,
           }}
         />
-        <Text style={{ fontSize: 15 }}>
-          <Text style={{ fontWeight: "bold" }}>{name}</Text>, who
-          you might know, is on instagram
+        <Text style={{ fontSize: 13 }}>
+          <Text style={{ fontWeight: "bold" }}>{name}</Text> is on Instagram.
+          <Text style={{ fontWeight: "bold" }}>{ week ? " Ironman" : " Spiderman"}</Text> and others millions also follow them.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity

@@ -83,11 +83,13 @@ export default function Notifications() {
         {
           friendsData.slice(0, 3).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
+            const [week, setWeek] = useState(true)
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
                   name={data.name}
                   profileImage={data.profileImage}
+                  week={week}
                   follow={follow}
                   setFollow={setFollow}
                   posts={data.posts}

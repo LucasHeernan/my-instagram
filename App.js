@@ -8,11 +8,12 @@ import Search from "./src/screens/Search";
 import Reels from "./src/screens/Reels";
 import Pluss from "./src/screens/Pluss";
 import Profile from "./src/screens/Profile";
-import { Ionicons, MaterialCommunityIcons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
+import { Ionicons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
 import Story from "./src/components/Story";
 import Notifications from "./src/components/Notifications";
 import FriendProfile from "./src/components/FriendProfile";
 import ProfileEdit from "./src/components/ProfileEdit";
+import Message from "./src/components/Message";
 
 export default function App() {
 
@@ -111,6 +112,7 @@ export default function App() {
         <Stack.Screen name="Bottom" component={BottomTabScreen} />
         <Stack.Screen name="Story" component={Story} />
         <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen name="Message" component={Message} />
         <Stack.Screen name="FriendProfile" component={FriendProfile} />
         <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       </Stack.Navigator>
