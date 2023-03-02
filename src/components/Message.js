@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Image, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Image, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Octicons, Ionicons, Entypo, AntDesign } from "@expo/vector-icons";
+import { Octicons, Ionicons, Entypo, AntDesign, FontAwesome } from "@expo/vector-icons";
 
 export default function Message() {
 
@@ -27,7 +27,7 @@ export default function Message() {
         </TouchableOpacity>
       </View>
 
-      <View /* style={{ position:"relative" }} */>
+      <View>
         <View
           style={{
             flexDirection: "row",
@@ -90,46 +90,97 @@ export default function Message() {
 
       </View>
 
-      <Image
-        source={require("../gallery/profilePictures/userProfile.png")}
-        style={{
-          position: "absolute",
-          bottom: 35,
-          left: 15,
-          resizeMode: "cover",
-          width: 20,
-          height: 20,
-          borderRadius: 100,
-        }}
-      />
-      
-      <Text
-        style={{
-          fontSize: 20,
-          position: "absolute",
-          bottom: 18,
-          left: 25,
-          padding: 15,
-          opacity: 0.5
-        }}
-      >|</Text>
-      <Text
-        style={{
-          fontSize: 10,
-          position: "absolute",
-          bottom: 0,
-          padding: 15
-        }}
-      >Lucas C 2023 | All rights reserved.</Text>
-      <Text
-        style={{
-          fontSize: 10,
-          position: "absolute",
-          bottom: 0,
-          right: 0,
-          padding: 15
-        }}
-      >Lucas Benitez</Text>
+      <View style={{ position: "absolute", width: "100%", padding: 5, bottom: 0,/*  backgroundColor: "lightblue" */ }}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center"
+          }}
+        >
+          <Image
+            source={require("../gallery/profilePictures/userProfile.png")}
+            style={{
+              resizeMode: "cover",
+              width: 25,
+              height: 25,
+              borderRadius: 100
+            }}
+          />
+          <Text
+            style={{
+              paddingHorizontal: 3,
+              fontSize: 20,
+              opacity: 0.5,
+              bottom: 0.5
+            }}
+          >|</Text>
+          <Image
+            source={require("../gallery/icons/expo_logo.png")}
+            style={{
+              resizeMode: "cover",
+              width: 18,
+              height: 18,
+              borderRadius: 100,
+              marginRight: 3,
+              top: 1
+            }}
+          />
+          <Image
+            source={require("../gallery/icons/react_logo.png")}
+            style={{
+              resizeMode: "cover",
+              width: 18,
+              height: 18,
+              borderRadius: 100,
+              marginRight: 3,
+              top: 1
+            }}
+          />
+          <Image
+            source={require("../gallery/icons/js.png")}
+            style={{
+              resizeMode: "cover",
+              width: 18,
+              height: 18,
+              borderRadius: 100,
+              marginRight: 4
+            }}
+          />
+          <Image
+            source={require("../gallery/icons/css.png")}
+            style={{
+              width: 18,
+              height: 18,
+              top: 1
+            }}
+          />
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between"
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 10,
+              fontWeight: "500",
+              opacity: 0.5
+            }}
+          >Lucas Benitez <FontAwesome name="copyright" size={11} color="black" /> 2023 | All rights reserved.</Text>
+          <Text
+            style={{
+              fontSize: 10,
+              fontWeight: "500",
+              opacity: 0.5,
+              paddingRight: 15
+            }}
+          >Contact me</Text>
+          <Text style={{ position:"absolute", fontSize: 12, bottom: 1, right: 0 }} >☝🏻</Text>
+        </View>
+      </View>
 
     </View>
   )
