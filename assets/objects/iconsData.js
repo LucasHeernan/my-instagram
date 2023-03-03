@@ -17,7 +17,7 @@ export const iconsData = [
   {
     tech: "reactjs",
     img: require("../../src/gallery/techImages/react.png"),
-    icon: require("../../src/gallery/icons/react.png")
+    icon: require("../../src/gallery/icons/react_logo.png")
   },
   {
     tech: "react native",
