@@ -5,7 +5,7 @@ import { FontAwesome } from "@expo/vector-icons";
 export default function MessageBottom() {
 
   return (
-    <View style={{ position: "absolute", width: "100%", padding: 5, bottom: 0 }}>
+    <View style={{ width: "100%", padding: 5 }}>
       <View
         style={{
           flexDirection: "row",

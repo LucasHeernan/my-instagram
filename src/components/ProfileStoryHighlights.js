@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Image, ScrollView, Text } from "react-native";
 import { iconsData } from "../../assets/objects/iconsData";
 import { Octicons } from "@expo/vector-icons";
 
-export default function ProfileStoryHighlights() {
+export default function ProfileStoryHighlights({ pluss }) {
   
   return (
     <View style={{ paddingBottom: 8 }}>
@@ -54,32 +54,52 @@ export default function ProfileStoryHighlights() {
                     <View
                       key={index}
                       style={{
-                        width: 18,
+                        width: pluss ? "100%" : 18,
                         height: 18,
                         borderRadius: 100,
-                        marginTop: 8,
-                        backgroundColor: "white"
+                        marginTop: 8
                       }}
                     >
-                      <Text style={{ width: "100%", height: "100%" }}>
-                        {data.icon}
-                      </Text>
+                      {
+                        pluss ?
+                        <Text
+                          style={{
+                            fontSize: 13,
+                            fontWeight: "500",
+                            alignSelf: "center"
+                          }}
+                        >{data.tech}</Text>
+                        :
+                        <Text style={{ width: "100%", height: "100%" }}>
+                          {data.icon}
+                        </Text>
+                      }
                     </View>
                   ) : (
                     <View
                       key={index}
                       style={{
-                        width: 18,
-                        height: 18,
+                        width: pluss ? "100%" : 18,
+                        height: pluss ? null : 18,
                         borderRadius: 100,
-                        marginTop: 8,
-                        backgroundColor: "white"
+                        marginTop: 8
                       }}
                     >
-                      <Image
-                        source={data.icon}
-                        style={{ width: "100%", height: "100%" }}
-                      />
+                      {
+                        pluss ?
+                        <Text
+                          style={{
+                            fontSize: 13,
+                            fontWeight: "500",
+                            alignSelf: "center"
+                          }}
+                        >{data.tech}</Text>
+                        :
+                        <Image
+                          source={data.icon}
+                          style={{ width: "100%", height: "100%" }}
+                        />
+                      }
                     </View>
                   )
                 }
@@ -87,29 +107,32 @@ export default function ProfileStoryHighlights() {
             )
           })
         }
-        <View
-          style={{
-            alignItems: "center",
-            justifyContent: "center",
-            paddingHorizontal: 13,
-            flexDirection: "column"
-          }}
-        >
-          <TouchableOpacity
+        {
+          pluss ? null :
+          <View
             style={{
-              width: 61,
-              height: 61,
-              borderRadius: 100,
-              borderWidth: 1.2,
               alignItems: "center",
               justifyContent: "center",
-              top: 1
+              paddingHorizontal: 13,
+              flexDirection: "column"
             }}
           >
-            <Octicons name="plus" size={25} color="black" />
-          </TouchableOpacity>
-          <Text style={{ marginTop: 8, top: 1 }} >And more</Text>
-        </View>
+            <TouchableOpacity
+              style={{
+                width: 61,
+                height: 61,
+                borderRadius: 100,
+                borderWidth: 1.2,
+                alignItems: "center",
+                justifyContent: "center",
+                top: 1
+              }}
+            >
+              <Octicons name="plus" size={25} color="black" />
+            </TouchableOpacity>
+            <Text style={{ marginTop: 8, top: 1 }} >And more</Text>
+          </View>
+        }
       </ScrollView>
     </View>
   )

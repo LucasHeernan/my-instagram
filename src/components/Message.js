@@ -103,7 +103,9 @@ export default function Message() {
 
       <MessageContacts />
 
-      <MessageBottom />
+      <View style={{ position:"absolute", width: "100%", bottom: 0 }}>
+        <MessageBottom />
+      </View>
       
     </View>
   )
