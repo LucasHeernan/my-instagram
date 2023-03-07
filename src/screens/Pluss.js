@@ -5,6 +5,8 @@ import MessageContacts from "../components/MessageContacts";
 import MessageBottom from "../components/MessageBottom";
 import ProfileStoryHighlights from "../components/ProfileStoryHighlights";
 
+import NewPost from "./NewPost";
+
 export default function Pluss() {
 
   const [like, setLike] = useState(false)
@@ -38,8 +40,7 @@ export default function Pluss() {
               fontSize: 20,
               fontWeight: "700",
               color: "#0195F7",
-              paddingVertical: 10,
-              backgroundColor: "white"
+              paddingVertical: 10
             }}
           >This app</Text>
           <Text>
@@ -61,8 +62,7 @@ export default function Pluss() {
               fontSize: 20,
               fontWeight: "700",
               color: "#0195F7",
-              paddingVertical: 10,
-              backgroundColor: "white"
+              paddingVertical: 10
             }}
           >Let's meet</Text>
           <Text>
@@ -95,9 +95,12 @@ export default function Pluss() {
 
         <MessageContacts pluss={pluss} />
 
+        <NewPost />
+
         <View style={{ paddingTop: 300 }}>
           <MessageBottom />
         </View>
+
         
       </ScrollView>
     </View>

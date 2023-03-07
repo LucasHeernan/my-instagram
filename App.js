@@ -7,6 +7,7 @@ import Home from "./src/screens/Home";
 import Search from "./src/screens/Search";
 import Reels from "./src/screens/Reels";
 import Pluss from "./src/screens/Pluss";
+import NewPost from "./src/screens/NewPost";
 import Profile from "./src/screens/Profile";
 import { Ionicons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
 import Story from "./src/components/Story";
@@ -96,7 +97,8 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
-        <Tab.Screen name="Pluss" component={Pluss} />
+        {/* <Tab.Screen name="Pluss" component={Pluss} /> */}
+        <Tab.Screen name="NewPost" component={NewPost} />
         <Tab.Screen name="Reels" component={Reels} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>

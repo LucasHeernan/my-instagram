@@ -1,7 +1,15 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
 
 export default function MessageContacts({ pluss }) {
+
+  const whatsappUrl = "whatsapp://send?text=Hola! 👋🏼&phone=5491134921341";
+  const gmail = "mailto:arellanotamara5@gmail.com?subject=Hello%20from%20Instagram%20clone";
+  // const gmail = "mailto:lhbenitez2@gmail.com?subject=Hello%20from%20Instagram%20clone";
+
+  const handleLinkPress = (url) => {
+    Linking.openURL(url);
+  };
 
   return (
     <View>
@@ -17,6 +25,7 @@ export default function MessageContacts({ pluss }) {
       >{ pluss ? "How to reach me" : "¿ How to reach me ?" }</Text>
       
       <TouchableOpacity
+        onPress={() => handleLinkPress("https://www.linkedin.com/in/lucas-hernan-benitez/")}
         style={{
           flexDirection: "row",
           alignItems: "center",
@@ -36,6 +45,7 @@ export default function MessageContacts({ pluss }) {
         <Text style={{ fontSize: 15, fontWeight: "600", paddingLeft: 15 }}>lucas benitez</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => handleLinkPress("https://github.com/LucasHeernan")}
         style={{
           flexDirection: "row",
           alignItems: "center",
@@ -55,6 +65,7 @@ export default function MessageContacts({ pluss }) {
         <Text style={{ fontSize: 15, fontWeight: "600", paddingLeft: 15 }}>LucasHeernan</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => handleLinkPress(whatsappUrl)}
         style={{
           flexDirection: "row",
           alignItems: "center",
@@ -74,6 +85,7 @@ export default function MessageContacts({ pluss }) {
         <Text style={{ fontSize: 15, fontWeight: "600", paddingLeft: 15 }}>+54 9 11 3492-1341</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => handleLinkPress(gmail)}
         style={{
           flexDirection: "row",
           alignItems: "center",
