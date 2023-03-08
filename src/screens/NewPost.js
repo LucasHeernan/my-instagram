@@ -32,6 +32,40 @@ export default function NewPost() {
 
       
       <ScrollView showsVerticalScrollIndicator={false}>
+
+        <View
+          style={{
+            width: "100%",
+            alignItems: "center",
+            paddingVertical: 15,
+          }}
+        >
+          <View
+            style={{
+              width: "90%",
+              backgroundColor: '#FFFFFF',
+              borderRadius: 5,
+              padding: 15,
+              elevation: 10,
+              shadowColor: '#000000',
+              shadowOpacity: 0.5,
+              shadowRadius: 10,
+              shadowOffset: {
+                height: 5,
+                width: 5
+              }
+            }}
+          >
+            <Image
+              source={require("../../assets/sheet1.jpg")}
+              style={{ width: "100%" }}
+            />
+            <Image
+              source={require("../../assets/sheet1.jpg")}
+              style={{ width: "100%" }}
+            />
+          </View>
+        </View>
         
         <View style={{ paddingHorizontal: 20 }}>
           <Text
