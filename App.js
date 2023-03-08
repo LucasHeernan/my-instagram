@@ -6,7 +6,6 @@ import { View, Image } from "react-native";
 import Home from "./src/screens/Home";
 import Search from "./src/screens/Search";
 import Reels from "./src/screens/Reels";
-import Pluss from "./src/screens/Pluss";
 import NewPost from "./src/screens/NewPost";
 import Profile from "./src/screens/Profile";
 import { Ionicons, Entypo, Feather, FontAwesome } from "@expo/vector-icons";
@@ -41,7 +40,7 @@ export default function App() {
               return focused ? <FontAwesome name="search" size={size} /> : <Ionicons name="search" size={size} />
             } else if (route.name === "Reels") {
               return focused ? <Entypo name="youtube" size={size} /> : <Feather name="youtube" size={size} />
-            } else if (route.name === "Pluss") {
+            } else if (route.name === "NewPost") {
               iconName = focused ? "plus-square" : "plus-square-o"
               return focused ? <FontAwesome name={iconName} size={23} style={{ bottom: 1 }} /> : <FontAwesome name={iconName} size={size} />
             } else if (route.name === "Profile") {
@@ -97,7 +96,6 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
-        {/* <Tab.Screen name="Pluss" component={Pluss} /> */}
         <Tab.Screen name="NewPost" component={NewPost} />
         <Tab.Screen name="Reels" component={Reels} />
         <Tab.Screen name="Profile" component={Profile} />

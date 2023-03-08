@@ -6,7 +6,7 @@ import { Grid, Col, Row } from "react-native-easy-grid";
 
 export default function NewPost() {
 
-  const [select, setSelect] = useState(false)
+  const [select, setSelect] = useState(false);
 
   return (
     <View style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
@@ -31,7 +31,8 @@ export default function NewPost() {
       </View>
 
       
-      <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: "lightgray" }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        
         <View style={{ paddingHorizontal: 20 }}>
           <Text
             style={{
@@ -75,6 +76,7 @@ export default function NewPost() {
             This project is a sample of what I can achieve if I set my mind to it.
           </Text>
         </View>
+
       </ScrollView>
 
       <View style={{ width: "100%", height: 300 }}>
@@ -143,129 +145,90 @@ export default function NewPost() {
         </View>
 
         
-        {/* <View> */}
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-          >
-            <Grid>
-              <Row style={{ height: 100 }}>
-                {
-                  iconsData.slice(0, 4).map((data, index) => {
-                    return (
-                      <Col
-                        key={index}
-                      >
-                        <View style={{ padding: 0.5 }}>
-                          <Image
-                            source={data.img}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              borderWidth: 0.5,
-                              borderColor: "#E6E6E6",
-                              backgroundColor:"white"
-                            }}
-                          />
-                        </View>
-                      </Col>
-                    )
-                  })
-                }
-              </Row>
-            </Grid>
-            <Grid>
-              <Row style={{ height: 100 }}>
-                {
-                  iconsData.slice(4, 8).map((data, index) => {
-                    return (
-                      <Col
-                        key={index}
-                      >
-                        <View style={{ padding: 0.5 }}>
-                          <Image
-                            source={data.img}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              borderWidth: 0.5,
-                              borderColor: "#E6E6E6",
-                              backgroundColor:"white"
-                            }}
-                          />
-                        </View>
-                      </Col>
-                    )
-                  })
-                }
-              </Row>
-            </Grid>
-            <Grid>
-              <Row style={{ height: 100 }}>
-                {
-                  iconsData.slice(8, 12).map((data, index) => {
-                    return (
-                      <Col
-                        key={index}
-                      >
-                        <View style={{ padding: 0.5 }}>
-                          <Image
-                            source={data.img}
-                            size={25}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              borderWidth: 0.5,
-                              borderColor: "#E6E6E6",
-                              backgroundColor:"white"
-                            }}
-                          />
-                        </View>
-                      </Col>
-                    )
-                  })
-                }
-              </Row>
-            </Grid>
-          </ScrollView>
-        {/* </View> */}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+        >
+          <Grid>
+            <Row style={{ height: 100 }}>
+              {
+                iconsData.slice(0, 4).map((data, index) => {
+                  return (
+                    <Col
+                      key={index}
+                    >
+                      <View style={{ padding: 0.5 }}>
+                        <Image
+                          source={data.img}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            borderWidth: 0.5,
+                            borderColor: "#E6E6E6",
+                            backgroundColor:"white"
+                          }}
+                        />
+                      </View>
+                    </Col>
+                  )
+                })
+              }
+            </Row>
+          </Grid>
+          <Grid>
+            <Row style={{ height: 100 }}>
+              {
+                iconsData.slice(4, 8).map((data, index) => {
+                  return (
+                    <Col
+                      key={index}
+                    >
+                      <View style={{ padding: 0.5 }}>
+                        <Image
+                          source={data.img}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            borderWidth: 0.5,
+                            borderColor: "#E6E6E6",
+                            backgroundColor:"white"
+                          }}
+                        />
+                      </View>
+                    </Col>
+                  )
+                })
+              }
+            </Row>
+          </Grid>
+          <Grid>
+            <Row style={{ height: 100 }}>
+              {
+                iconsData.slice(8, 12).map((data, index) => {
+                  return (
+                    <Col
+                      key={index}
+                    >
+                      <View style={{ padding: 0.5 }}>
+                        <Image
+                          source={data.img}
+                          size={25}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            borderWidth: 0.5,
+                            borderColor: "#E6E6E6",
+                            backgroundColor:"white"
+                          }}
+                        />
+                      </View>
+                    </Col>
+                  )
+                })
+              }
+            </Row>
+          </Grid>
+        </ScrollView>
 
-        {/* <ScrollView> */}
-          {/* <View
-            style={{
-              flexDirection: "row",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly",
-              width: "100%",
-              paddingTop: 3,
-              backgroundColor: "lightgray"
-            }}
-          >
-            {
-              iconsData.map((data, index) => {
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={{
-                      width: "24%",
-                      margin: 1
-                    }}
-                  >
-                    <Image
-                      source={data.img}
-                      style={{
-                        width: "100%",
-                        height: 100,
-                        backgroundColor: "white",
-                        resizeMode: "cover"
-                      }}
-                    />
-                  </TouchableOpacity>
-                )
-              })
-            }
-          </View> */}
-
-        {/* </ScrollView> */}
       </View>
 
     </View>
