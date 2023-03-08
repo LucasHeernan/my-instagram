@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { iconsData } from "../../assets/objects/iconsData";
-import { Ionicons } from "@expo/vector-icons";
+import { Feather, AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Grid, Col, Row } from "react-native-easy-grid";
 
 export default function NewPost() {
+
+  const [select, setSelect] = useState(false)
 
   return (
     <View style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
@@ -13,22 +15,23 @@ export default function NewPost() {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: 10
+          paddingHorizontal: 15,
+          paddingVertical: 10
         }}
       >
         <TouchableOpacity>
-          <Ionicons name="close-outline" size={35} />
+          <AntDesign name="close" size={30} color="black" />
         </TouchableOpacity>
-        <Text style={{ fontSize: 21, fontWeight: "bold", right: 90, bottom: 1 }}>
+        <Text style={{ fontSize: 21, fontWeight: "bold", right: 90 }}>
           New post
         </Text>
         <TouchableOpacity>
-          <Ionicons name="checkmark" size={30} color="#0195F7" />
+          <AntDesign name="arrowright" size={28} color="#0195F7" />
         </TouchableOpacity>
       </View>
 
       
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: "lightgray" }}>
         <View style={{ paddingHorizontal: 20 }}>
           <Text
             style={{
@@ -79,12 +82,64 @@ export default function NewPost() {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-            padding: 15,
-            backgroundColor: "orange"
+            alignItems: "center",
+            paddingHorizontal: 15,
+            paddingVertical: 10
           }}
         >
-          <Text>Technologies</Text>
-          <Text>Selec multiples</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center"
+            }}
+          >
+            <Text style={{ fontSize: 18, fontWeight: "500" }}>Gallery</Text>
+            <TouchableOpacity>
+              <Feather
+                name="chevron-down"
+                size={17}
+                style={{ paddingLeft: 4, opacity: 0.8 }}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center"
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => setSelect(!select)}
+              style={{
+                backgroundColor: "gray",
+                padding: 7,
+                borderRadius: 100,
+                alignItems: "center",
+                marginHorizontal: 10,
+                flexDirection: "row"
+              }}
+            >
+              <MaterialCommunityIcons name="folder-multiple-outline" size={17} color="white" />
+              { select ?
+                <Text
+                  style={{
+                    fontSize: 12,
+                    color: "white",
+                    paddingLeft: 8
+                  }}
+                >SELECT MULTIPLE</Text> : null }
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "gray",
+                padding: 7,
+                borderRadius: 100,
+              }}
+            >
+              <Feather name="camera" size={17} color="white" />
+            </TouchableOpacity>
+          </View>
         </View>
 
         

@@ -43,7 +43,7 @@ export default function Home() {
             }}
           />
           <TouchableOpacity>
-            <MaterialCommunityIcons name="chevron-down" size={22} color="black" style={{ top: 2.5 }} />
+            <MaterialCommunityIcons name="chevron-down" size={22} color="black" style={{ top: 2.5, right: 3 }} />
           </TouchableOpacity>
         </View>
 				<View
