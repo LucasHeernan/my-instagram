@@ -32,16 +32,14 @@ export default function NewPost() {
 
       
       <ScrollView showsVerticalScrollIndicator={false}>
-
-        <View
-          style={{
-            width: "100%",
-            alignItems: "center",
-            paddingVertical: 15,
-          }}
-        >
+        <View style={{ width: "100%", alignItems: "center", paddingVertical: 25 }}>
+          <Image
+            source={require("../../assets/madera3.jpg")}
+            style={{ position:"absolute", width: "100%" }}
+          />
           <View
             style={{
+              position: "relative",
               width: "90%",
               backgroundColor: '#FFFFFF',
               borderRadius: 5,
@@ -60,14 +58,33 @@ export default function NewPost() {
               source={require("../../assets/sheet1.jpg")}
               style={{ width: "100%" }}
             />
-            <Image
-              source={require("../../assets/sheet1.jpg")}
-              style={{ width: "100%" }}
-            />
+            <View style={{ position: "absolute", paddingHorizontal: 18, paddingVertical: 15 }}>
+              <Text style={{ lineHeight: 24, fontWeight: "300" }}>
+                <Text style={{ fontSize: 16, fontWeight: "bold", color: "#0195F7" }}>ABOUT THIS PROYECT</Text>{'\n'}
+                This project is a replica of the entire visual interface of Instagram, 
+                in which you can take a tour of all the screens and see how similar it is to the original.{'\n'}
+                The app was built entirely with
+                <Text style={{ fontWeight: "bold" }}> Javascript </Text> using
+                <Text style={{ fontWeight: "bold" }}> React Native</Text>,
+                <Text style={{ fontWeight: "bold" }}> Expo</Text> and pure
+                <Text style={{ fontWeight: "bold" }}> CSS</Text> for the styles.
+                {'\n'}{'\n'}
+                <Text style={{ fontSize: 16, fontWeight: "bold", color: "#0195F7" }}>LET'S MEET</Text>
+                {'\n'}
+                <Text style={{ fontSize: 17 }}>👋🏼</Text> Hi! My name is<Text style={{ fontWeight: "bold" }}> Lucas Hernan Benitez</Text>, I am a
+                <Text style={{ fontWeight: "bold" }}> Full Stack developer</Text> with a <Text style={{ fontWeight: "bold" }}>Front end</Text> orientation from Argentina. 
+                I am looking for my first job in the IT field with aspirations to further expand the knowledge already obtained. 
+                I seek to be part of a team from which I can learn their skills and qualities.
+                {'\n'}
+                I consider myself a committed and persevering person when it comes to meeting the goals set, 
+                dedicating myself proactively, adapting to different scenarios, achieving solutions to existing problems. 
+                This project is a sample of what I can achieve if I set my mind to it.
+              </Text>
+            </View>
           </View>
         </View>
         
-        <View style={{ paddingHorizontal: 20 }}>
+        {/* <View style={{ paddingHorizontal: 20 }}>
           <Text
             style={{
               fontSize: 20,
@@ -109,7 +126,7 @@ export default function NewPost() {
             dedicating myself proactively, adapting to different scenarios, achieving solutions to existing problems. 
             This project is a sample of what I can achieve if I set my mind to it.
           </Text>
-        </View>
+        </View> */}
 
       </ScrollView>
 
