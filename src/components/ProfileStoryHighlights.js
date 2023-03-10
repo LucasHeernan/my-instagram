@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Image, ScrollView, Text } from "react-native";
 import { iconsData } from "../../assets/objects/iconsData";
 import { Octicons } from "@expo/vector-icons";
 
-export default function ProfileStoryHighlights({ pluss }) {
+export default function ProfileStoryHighlights({ plus }) {
   
   return (
     <View style={{ paddingBottom: 8 }}>
@@ -54,14 +54,14 @@ export default function ProfileStoryHighlights({ pluss }) {
                     <View
                       key={index}
                       style={{
-                        width: pluss ? "100%" : 18,
+                        width: plus ? "100%" : 18,
                         height: 18,
                         borderRadius: 100,
                         marginTop: 8
                       }}
                     >
                       {
-                        pluss ?
+                        plus ?
                         <Text
                           style={{
                             fontSize: 13,
@@ -79,14 +79,14 @@ export default function ProfileStoryHighlights({ pluss }) {
                     <View
                       key={index}
                       style={{
-                        width: pluss ? "100%" : 18,
-                        height: pluss ? null : 18,
+                        width: plus ? "100%" : 18,
+                        height: plus ? null : 18,
                         borderRadius: 100,
                         marginTop: 8
                       }}
                     >
                       {
-                        pluss ?
+                        plus ?
                         <Text
                           style={{
                             fontSize: 13,
@@ -108,7 +108,7 @@ export default function ProfileStoryHighlights({ pluss }) {
           })
         }
         {
-          pluss ? null :
+          plus ? null :
           <View
             style={{
               alignItems: "center",

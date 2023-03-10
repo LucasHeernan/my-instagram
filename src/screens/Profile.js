@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, ScrollView, Text, TouchableOpacity } from "react-native";
 import { Feather, SimpleLineIcons, Octicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import ProfileHeader from "../components/ProfileHeader";
 import ProfileButtons from "../components/ProfileButtons";
 import ProfileStoryHighlights from "../components/ProfileStoryHighlights";
@@ -9,7 +10,8 @@ import ProfileContent from "../components/ProfileContent";
 
 export default function Profile() {
 
-  const [suggestions, setSuggestions] = useState(false)
+  const navigation = useNavigation();
+  const [suggestions, setSuggestions] = useState(false);
 
   return (
     <View
@@ -51,7 +53,7 @@ export default function Profile() {
             </TouchableOpacity>
           </View>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.push("Plus")}>
               <Feather name="plus-square" size={25} style={{ paddingHorizontal: 18 }} />
             </TouchableOpacity>
             <TouchableOpacity>

@@ -14,6 +14,7 @@ import Notifications from "./src/components/Notifications";
 import FriendProfile from "./src/components/FriendProfile";
 import ProfileEdit from "./src/components/ProfileEdit";
 import Message from "./src/components/Message";
+import Plus from "./src/components/Plus";
 
 export default function App() {
 
@@ -115,6 +116,7 @@ export default function App() {
         <Stack.Screen name="Message" component={Message} />
         <Stack.Screen name="FriendProfile" component={FriendProfile} />
         <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
+        <Stack.Screen name="Plus" component={Plus} />
       </Stack.Navigator>
     </NavigationContainer>
   )

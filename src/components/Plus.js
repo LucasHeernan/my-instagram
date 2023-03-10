@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-import MessageContacts from "../components/MessageContacts";
-import MessageBottom from "../components/MessageBottom";
-import ProfileStoryHighlights from "../components/ProfileStoryHighlights";
+import { AntDesign, Octicons } from "@expo/vector-icons";
+import MessageContacts from "./MessageContacts";
+import MessageBottom from "./MessageBottom";
+import ProfileStoryHighlights from "./ProfileStoryHighlights";
 
-import NewPost from "./NewPost";
-
-export default function Pluss() {
+export default function Plus({ navigation }) {
 
   const [like, setLike] = useState(false)
-  const [pluss, setPluss] = useState(true)
+  const [plus, setPlus] = useState(true)
 
   return (
     <View style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
@@ -23,6 +21,9 @@ export default function Pluss() {
           paddingVertical: 15
 				}}
 			>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Octicons name="arrow-left" size={24} />
+        </TouchableOpacity>
         <Text style={{ fontSize: 21, fontWeight: "700" }}>About</Text>
         <TouchableOpacity onPress={() => setLike(!like)}>
           <AntDesign
@@ -91,11 +92,9 @@ export default function Pluss() {
           <Text>As a Full Stack <Text style={{ fontWeight: "bold" }}>PERN</Text> developer these are the technologies that I use</Text>
         </View>
         
-        <ProfileStoryHighlights pluss={pluss} />
+        <ProfileStoryHighlights plus={plus} />
 
-        <MessageContacts pluss={pluss} />
-
-        <NewPost />
+        <MessageContacts plus={plus} />
 
         <View style={{ paddingTop: 300 }}>
           <MessageBottom />

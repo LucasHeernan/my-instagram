@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
 
-export default function MessageContacts({ pluss }) {
+export default function MessageContacts({ plus }) {
 
   const whatsappUrl = "whatsapp://send?text=Hola! 👋🏼&phone=5491134921341";
   const gmail = "mailto:arellanotamara5@gmail.com?subject=Hello%20from%20Instagram%20clone";
@@ -15,14 +15,14 @@ export default function MessageContacts({ pluss }) {
     <View>
       <Text
         style={{
-          fontSize: pluss ? 20 : 17,
-          fontWeight: pluss ? "700" : "500",
+          fontSize: plus ? 20 : 17,
+          fontWeight: plus ? "700" : "500",
           color: "#0195F7",
           paddingHorizontal: 20,
-          paddingVertical: pluss ? 10 : 15,
-          marginTop: pluss ? 0 : 10
+          paddingVertical: plus ? 10 : 15,
+          marginTop: plus ? 0 : 10
         }}
-      >{ pluss ? "How to reach me" : "¿ How to reach me ?" }</Text>
+      >{ plus ? "How to reach me" : "¿ How to reach me ?" }</Text>
       
       <TouchableOpacity
         onPress={() => handleLinkPress("https://www.linkedin.com/in/lucas-hernan-benitez/")}
@@ -37,8 +37,8 @@ export default function MessageContacts({ pluss }) {
           source={require("../gallery/icons/linkedin_logo.png")}
           style={{
             resizeMode: "cover",
-            width: pluss ? 30 : 37,
-            height: pluss ? 30 : 37,
+            width: plus ? 30 : 37,
+            height: plus ? 30 : 37,
             borderRadius: 100
           }}
         />
@@ -57,8 +57,8 @@ export default function MessageContacts({ pluss }) {
           source={require("../gallery/icons/github_logo.png")}
           style={{
             resizeMode: "cover",
-            width: pluss ? 30 : 37,
-            height: pluss ? 30 : 37,
+            width: plus ? 30 : 37,
+            height: plus ? 30 : 37,
             borderRadius: 100
           }}
         />
@@ -77,8 +77,8 @@ export default function MessageContacts({ pluss }) {
           source={require("../gallery/icons/whatsapp_logo.png")}
           style={{
             resizeMode: "cover",
-            width: pluss ? 30 : 37,
-            height: pluss ? 30 : 37,
+            width: plus ? 30 : 37,
+            height: plus ? 30 : 37,
             borderRadius: 100
           }}
         />
@@ -97,8 +97,8 @@ export default function MessageContacts({ pluss }) {
           source={require("../gallery/icons/gmail_logo.png")}
           style={{
             resizeMode: "cover",
-            width: pluss ? 30 : 37,
-            height: pluss ? 30 : 37,
+            width: plus ? 30 : 37,
+            height: plus ? 30 : 37,
             borderRadius: 100
           }}
         />
