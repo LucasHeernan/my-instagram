@@ -169,10 +169,7 @@ export default function Notifications() {
                             following: data.following,
                           })
                         }
-                        style={{
-                          flexDirection: "row",
-                          maxWidth: "70%"
-                        }}
+                        style={{ flexDirection: "row", maxWidth: "70%" }}
                       >
                         <Image
                           source={data.profileImage}
@@ -199,9 +196,7 @@ export default function Notifications() {
                         (
                           <TouchableOpacity
                             onPress={() => setFollow(!follow)}
-                            style={{
-                              width: follow ? 90 : 68,
-                            }}
+                            style={{ width: follow ? 90 : 68 }}
                           >
                             <View
                               style={{
@@ -224,9 +219,7 @@ export default function Notifications() {
                           <>
                             <TouchableOpacity
                               onPress={() => setFollow(!follow)}
-                              style={{
-                                width: follow ? 90 : 74
-                              }}
+                              style={{ width: follow ? 90 : 74 }}
                             >
                               <View
                                 style={{
@@ -261,7 +254,6 @@ export default function Notifications() {
             );
           })
         }
-
       </ScrollView>
     </View>
   )

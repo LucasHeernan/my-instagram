@@ -1,51 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Video } from "expo-av";
 import { View, Text, Dimensions, TouchableOpacity, Image } from "react-native";
 import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 
 export default function SingleReel({ item }) {
 
   const { width, height } = Dimensions.get("window");
+  const firstVideo = useRef(null);
 
   const [like, setLike] = useState(item.isLike);
-  const [mute, setMute] = useState(false);
+  const [music, setMusic] = useState(false);
+
+  const handleVolume = () => {
+    setMusic(true);
+
+    setTimeout(() => {
+      setMusic(false);
+    }, 2000);
+  }
 
   return (
     <View
       style={{
         width: width,
         height: height,
-        position: "relative",
-        justifyContent: "center",
-        alignItems: "center"
+        position: 'relative',
+        justifyContent: 'center',
+        alignItems: 'center'
       }}
     >
       <TouchableOpacity
         activeOpacity={0.9}
-        onPress={() => setMute(!mute)}
+        onPress={handleVolume}
         style={{
           width: "100%",
           height: "100%",
           position: "absolute"
         }}
       >
-        <Image
-          source={item.postProfile}
+        <Video
+          ref={firstVideo}
+          source={item.video}
           style={{
-            width: "100%",
-            height: "100%",
-            position: "absolute"
+            width: '100%',
+            height: '100%',
           }}
+          shouldPlay={true}
+          rate={1}
+          isMuted={false}
+          useNativeControls={false}
+          resizeMode="cover"
+          isLooping={true}
         />
       </TouchableOpacity>
       <Ionicons
-        name="volume-mute"
-        size={mute ? 20 : 0}
+        name="volume-high"
+        size={ music ? 20 : 0 }
         color="white"
         style={{
           position: "absolute",
           backgroundColor: "rgba(52,52,52,0.6)",
           borderRadius: 100,
-          padding: mute ? 20 : 0
+          padding: music ? 20 : 0
         }}
       />
 
@@ -58,13 +74,7 @@ export default function SingleReel({ item }) {
           bottom: 40
         }}
       >
-        <View
-          style={{
-            width: 150,
-            flexDirection: "row",
-            alignItems: "center"
-          }}
-        >
+        <View style={{ width: 150, flexDirection: "row", alignItems: "center" }}>
           <TouchableOpacity
             style={{
               width: 32,
@@ -99,14 +109,7 @@ export default function SingleReel({ item }) {
         </View>
       </View>
 
-      <View
-        style={{
-          position: "absolute",
-          bottom: 50,
-          right: 0,
-          zIndex: 1
-        }}
-      >
+      <View style={{ position: "absolute", bottom: 50, right: 0, zIndex: 1 }}>
         <TouchableOpacity onPress={() => setLike(!like)} style={{ padding: 10 }}>
           {
             like ? <AntDesign name="heart" color="red" size={24} /> : <Feather name="heart" color="white" size={24} />
@@ -131,7 +134,8 @@ export default function SingleReel({ item }) {
             borderWidth: 2,
             borderColor: "white",
             margin: 10,
-          }}>
+          }}
+        >
           <Image
             source={item.postProfile}
             style={{
@@ -143,7 +147,6 @@ export default function SingleReel({ item }) {
           />
         </View>
       </View>
-
     </View>
   )
 }

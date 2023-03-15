@@ -72,7 +72,6 @@ export default function Profile() {
         </ScrollView>
       </View>
       <ProfileContent />
-
     </View>
   )
 }

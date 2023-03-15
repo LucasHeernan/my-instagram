@@ -95,23 +95,10 @@ export default function Story({ route, navigation }) {
             }}
           />
         </View>
-        <View
-          style={{
-            justifyContent: "space-between",
-            flexDirection: "row",
-            width: "100%"
-          }}
-        >
+        <View style={{ justifyContent: "space-between", flexDirection: "row", width: "100%" }}>
           <Text style={{ color: "white", fontSize: 15, paddingLeft: 10 }}>{name}</Text>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Ionicons
-              name="close"
-              style={{
-                fontSize: 20,
-                color: "white",
-                opacity: 0.7
-              }}
-            />
+            <Ionicons name="close" size={20} color="white" style={{ opacity: 0.7 }} />
           </TouchableOpacity>
         </View>
       </View>
@@ -153,13 +140,7 @@ export default function Story({ route, navigation }) {
             opacity: 0.9
           }}
         />
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-around",
-            width: 80
-          }}
-        >
+        <View style={{ flexDirection: "row", justifyContent: "space-around", width: 80 }}>
           <TouchableOpacity onPress={() => setLike(!like)}>
             {
               like ? <AntDesign name="heart" size={24} color="red" /> :
@@ -167,11 +148,10 @@ export default function Story({ route, navigation }) {
             }
           </TouchableOpacity>
           <TouchableOpacity>
-            <Feather name="send" size={23} color= "white" />
+            <Feather name="send" size={23} color="white" />
           </TouchableOpacity>
         </View>
       </View>
-
     </View>
   )
 }

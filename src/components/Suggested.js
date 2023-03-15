@@ -43,11 +43,7 @@ export default function Suggested({ name, friendProfile }) {
                 >
                   <TouchableOpacity
                     onPress={() => setClose(true)}
-                    style={{
-                      position: "absolute",
-                      top: 5,
-                      right: 5,
-                    }}
+                    style={{ position: "absolute", top: 5, right: 5 }}
                   >
                     <AntDesign name="close" size={18} color="black" style={{ opacity: 0.5 }} />
                   </TouchableOpacity>

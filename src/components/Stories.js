@@ -9,12 +9,7 @@ export default function Stories() {
 	const navigation = useNavigation();
 
 	return (
-    <View
-      style={{
-        borderBottomColor: "#D8D8D8",
-        borderBottomWidth: 0.29
-      }}
-    >  
+    <View style={{ borderBottomColor: "#D8D8D8", borderBottomWidth: 0.29 }}>  
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -44,10 +39,7 @@ export default function Stories() {
                     name="circle-with-plus"
                     size={20}
                     color="#0095fc"
-                    style={{
-                      backgroundColor: "white",
-                      borderRadius: 100
-                    }}
+                    style={{ backgroundColor: "white", borderRadius: 100 }}
                   />
                 </TouchableOpacity>
                 <View
@@ -84,11 +76,7 @@ export default function Stories() {
                   image: data.image,
                   setStory
                 })}
-                style={{
-                  flexDirection: "column",
-                  paddingHorizontal: 8,
-                  position: "relative",
-                }}
+                style={{ flexDirection: "column", paddingHorizontal: 8, position: "relative" }}
               >
                 <View
                   style={{

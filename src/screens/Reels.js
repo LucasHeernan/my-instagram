@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import { View, Text, Dimensions } from "react-native";
-import { SwiperFlatList } from "react-native-swiper-flatlist";
-import SingleReel from "../components/SingleReel";
+import React from "react";
+import { View, TouchableOpacity, Dimensions } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import SingleVideo from "../components/SingleReel";
+import { SwiperFlatList } from "react-native-swiper-flatlist";
 import { videoData } from "../../assets/objects/videoData";
 
 export default function Reels() {
 
   const { width, height } = Dimensions.get("window");
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleChangeIndex = ({index}) => {
-    setCurrentIndex(index);
-  };
 
   return (
     <View
@@ -25,41 +19,29 @@ export default function Reels() {
         backgroundColor: "black",
       }}
     >
-      <View
+      <TouchableOpacity
         style={{
           position: "absolute",
           top: 0,
-          left: 0,
           right: 0,
-          flexDirection: "row",
-          justifyContent: "space-between",
           zIndex: 1,
           padding: 15,
           alignItems: "center"
         }}
       >
-        {
-          !currentIndex ? (
-            <Text style={{ fontSize: 22, fontWeight: "bold", color: "white"}}>
-              Reels
-            </Text>  
-          ) : ( <Text style={{ fontSize: 22, opacity: 0}}>AAA</Text> )
-        }
         <Feather name="camera" size={25} color="white" />
-      </View>
+      </TouchableOpacity>
       <SwiperFlatList
         vertical={true}
-        onChangeIndex={handleChangeIndex}
         data={videoData}
         renderItem={({item, index}) => (
-          <SingleReel
+          <SingleVideo
             item={item}
             index={index}
-            currentIndex={currentIndex}
           />
         )}
         keyExtractor={(item, index) => index}
       />
     </View>
-  );
+  )
 }

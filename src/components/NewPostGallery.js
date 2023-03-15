@@ -19,28 +19,14 @@ export default function NewPostGallery() {
           paddingVertical: 10
         }}
       >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center"
-          }}
-        >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Text style={{ fontSize: 18, fontWeight: "500" }}>Gallery</Text>
           <TouchableOpacity>
-            <Feather
-              name="chevron-down"
-              size={17}
-              style={{ paddingLeft: 4, opacity: 0.8 }}
-            />
+            <Feather name="chevron-down" size={17} style={{ paddingLeft: 4, opacity: 0.8 }}/>
           </TouchableOpacity>
         </View>
 
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center"
-          }}
-        >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
           <TouchableOpacity
             onPress={() => setSelect(!select)}
             style={{
@@ -53,14 +39,16 @@ export default function NewPostGallery() {
             }}
           >
             <MaterialCommunityIcons name="folder-multiple-outline" size={17} color="white" />
-            { select ?
+            { 
+              select ?
               <Text
                 style={{
                   fontSize: 12,
                   color: "white",
                   paddingLeft: 8
                 }}
-              >SELECT MULTIPLE</Text> : null }
+              >SELECT MULTIPLE</Text> : null
+            }
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -80,9 +68,7 @@ export default function NewPostGallery() {
             {
               iconsData.slice(0, 4).map((data, index) => {
                 return (
-                  <Col
-                    key={index}
-                  >
+                  <Col key={index}>
                     <View style={{ padding: 0.5 }}>
                       <Image
                         source={data.img}
@@ -106,9 +92,7 @@ export default function NewPostGallery() {
             {
               iconsData.slice(4, 8).map((data, index) => {
                 return (
-                  <Col
-                    key={index}
-                  >
+                  <Col key={index}>
                     <View style={{ padding: 0.5 }}>
                       <Image
                         source={data.img}
@@ -132,9 +116,7 @@ export default function NewPostGallery() {
             {
               iconsData.slice(8, 12).map((data, index) => {
                 return (
-                  <Col
-                    key={index}
-                  >
+                  <Col key={index}>
                     <View style={{ padding: 0.5 }}>
                       <Image
                         source={data.img}

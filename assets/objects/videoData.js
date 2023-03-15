@@ -35,4 +35,22 @@ export const videoData = [
     isLike: false,
     messages: 4144
   },
+  {
+    video: require("../../src/gallery/videos/video5.mp4"),
+    postProfile: require("../../src/gallery/postImages/post4.jpg"),
+    title: "mr.bean",
+    description: "How cute it is !!",
+    likes: "876k",
+    isLike: false,
+    messages: 4144
+  },
+  {
+    video: require("../../src/gallery/videos/video6.mp4"),
+    postProfile: require("../../src/gallery/postImages/post4.jpg"),
+    title: "mr.bean",
+    description: "How cute it is !!",
+    likes: "876k",
+    isLike: false,
+    messages: 4144
+  },
 ];

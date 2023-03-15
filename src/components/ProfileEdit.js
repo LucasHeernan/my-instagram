@@ -167,7 +167,6 @@ export default function ProfileEdit({ navigation }) {
           Personal information settings
         </Text>
       </View>
-
     </View>
   );
 };

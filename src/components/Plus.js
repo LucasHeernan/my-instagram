@@ -100,7 +100,6 @@ export default function Plus({ navigation }) {
           <MessageBottom />
         </View>
 
-        
       </ScrollView>
     </View>
   )

@@ -13,8 +13,7 @@ export default function Post() {
         postData.map((data, index) => {
           const [like, setLike] = useState(data.isLiked);
           return (
-            <View key={index} style={{ paddingBottom: 10 }}
-            >
+            <View key={index} style={{ paddingBottom: 10 }}>
               <View
                 style={{
                   flexDirection: "row",
@@ -28,11 +27,7 @@ export default function Post() {
                 >
                   <Image
                     source={data.postPersonImage}
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 100
-                    }}
+                    style={{ width: 40, height: 40, borderRadius: 100 }}
                   />
                   <View style={{ paddingLeft: 5 }} >
                     <Text style={{ fontSize: 15, fontWeight: "500" }} >
@@ -54,10 +49,7 @@ export default function Post() {
               >
                 <Image
                   source={data.postImage}
-                  style={{
-                    width: "100%",
-                    height: 400
-                  }}
+                  style={{ width: "100%", height: 400 }}
                 />
               </View>
 
@@ -94,8 +86,8 @@ export default function Post() {
 
               <View style={{ paddingHorizontal: 15 }} >
                 <Text>
-                  Liked by { like ? "you and " : ""}
-                  { like ? data.likes + 1 : data.likes } others
+                  Liked by { like ? <><Text style={{ fontWeight: "bold" }}>you</Text><Text> and </Text></> : "" }
+                  <Text style={{ fontWeight: "bold" }}>{ like ? data.likes + 1 : data.likes } others</Text>
                 </Text>
                 <Text
                   style={{
@@ -103,7 +95,7 @@ export default function Post() {
                     fontSize: 14,
                     paddingVertical: 2,
                   }}>
-                  If enjoy the app ! Please like and share 😉
+                  If enjoy the app contact me 😉
                 </Text>
                 <Text style={{ opacity: 0.4, paddingVertical: 2 }}>
                   View all comments
@@ -116,7 +108,7 @@ export default function Post() {
                         width: 25,
                         height: 25,
                         borderRadius: 100,
-                        backgroundColor: "orange",
+                        backgroundColor: "white",
                         marginRight: 10
                       }}
                     />
@@ -136,9 +128,7 @@ export default function Post() {
                     </TouchableOpacity>
                   </View>
                 </View>
-
               </View>
-
             </View>
           )
         })

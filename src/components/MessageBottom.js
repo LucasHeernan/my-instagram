@@ -66,11 +66,7 @@ export default function MessageBottom() {
         />
         <Image
           source={require("../gallery/icons/css.png")}
-          style={{
-            width: 18,
-            height: 18,
-            top: 0.5
-          }}
+          style={{ width: 18, height: 18, top: 0.5 }}
         />
       </View>
 
@@ -81,13 +77,9 @@ export default function MessageBottom() {
           justifyContent: "space-between"
         }}
       >
-        <Text
-          style={{
-            fontSize: 10,
-            fontWeight: "700",
-            opacity: 0.5
-          }}
-        >Lucas Benitez <FontAwesome name="copyright" size={11} color="black"/> 2023 | All rights reserved.</Text>
+        <Text style={{ fontSize: 10, fontWeight: "700", opacity: 0.5 }}>
+          Lucas Benitez <FontAwesome name="copyright" size={11} color="black"/> 2023 | All rights reserved.
+        </Text>
         <Text
           style={{
             fontSize: 10,

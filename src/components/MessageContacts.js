@@ -4,8 +4,7 @@ import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
 export default function MessageContacts({ plus }) {
 
   const whatsappUrl = "whatsapp://send?text=Hola! 👋🏼&phone=5491134921341";
-  const gmail = "mailto:arellanotamara5@gmail.com?subject=Hello%20from%20Instagram%20clone";
-  // const gmail = "mailto:lhbenitez2@gmail.com?subject=Hello%20from%20Instagram%20clone";
+  const gmail = "mailto:lhbenitez2@gmail.com?subject=Hello%20from%20Instagram%20clone";
 
   const handleLinkPress = (url) => {
     Linking.openURL(url);
@@ -82,7 +81,7 @@ export default function MessageContacts({ plus }) {
             borderRadius: 100
           }}
         />
-        <Text style={{ fontSize: 15, fontWeight: "600", paddingLeft: 15 }}>+54 9 11 3492-1341</Text>
+        <Text style={{ fontSize: 15, fontWeight: "600", paddingLeft: 15 }}>+54 9 11 3492 1341</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => handleLinkPress(gmail)}
