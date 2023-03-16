@@ -22,7 +22,7 @@ export const postData = [
   },
   {
     postTitle: "i_am_groot",
-    postPersonImage: require("../../src/gallery/profilePictures/profile3.jpg"),
+    postPersonImage: require("../../src/gallery/profilePictures/groot.jpg"),
     postImage: require("../../src/gallery/postImages/post4.jpg"),
     likes: 875,
     isLiked: false,

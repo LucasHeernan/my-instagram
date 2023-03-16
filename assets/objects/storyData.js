@@ -6,27 +6,68 @@ export const storyData = [
   },
   {
     id: 0,
-    name: "ram_charan",
-    image: require("../../src/gallery/profilePictures/profile1.jpg"),
+    name: "burro",
+    image: require("../../src/gallery/profilePictures/burro.jpg"),
+    story: require("../../src/gallery/storyPictures/burroStory.jpg")
   },
   {
     id: 0,
-    name: "tom",
-    image: require("../../src/gallery/profilePictures/profile2.jpg"),
+    name: "gato_c_botas",
+    image: require("../../src/gallery/profilePictures/gato.jpg"),
+    story: require("../../src/gallery/storyPictures/gatoStory.jpg")
   },
   {
     id: 0,
-    name: "i_am_groot",
-    image: require("../../src/gallery/profilePictures/profile3.jpg"),
+    name: "chimuelo",
+    image: require("../../src/gallery/profilePictures/chimuelo.jpg"),
+    story: require("../../src/gallery/storyPictures/chimueloStory.jpg")
   },
   {
     id: 0,
-    name: "loverland",
-    image: require("../../src/gallery/profilePictures/profile4.jpg"),
+    name: "woody",
+    image: require("../../src/gallery/profilePictures/woody.jpg"),
+    story: require("../../src/gallery/storyPictures/woodyStory.jpg")
   },
   {
     id: 0,
-    name: "chillhouse",
-    image: require("../../src/gallery/profilePictures/profile5.jpg"),
+    name: "jessie",
+    image: require("../../src/gallery/profilePictures/jessie.jpg"),
+    story: require("../../src/gallery/storyPictures/jessieStory.jpg")
+  },
+  {
+    id: 0,
+    name: "buzz_lightyear",
+    image: require("../../src/gallery/profilePictures/bozz.jpg"),
+    story: require("../../src/gallery/storyPictures/bozzStory.jpg")
+  },
+  {
+    id: 0,
+    name: "betty",
+    image: require("../../src/gallery/profilePictures/betty.jpg"),
+    story: require("../../src/gallery/storyPictures/bettyStory.jpg")
+  },
+  {
+    id: 0,
+    name: "sid",
+    image: require("../../src/gallery/profilePictures/sid.jpg"),
+    story: require("../../src/gallery/profilePictures/sid.jpg")
+  },
+  {
+    id: 0,
+    name: "alex",
+    image: require("../../src/gallery/profilePictures/alex.jpg"),
+    story: require("../../src/gallery/storyPictures/alexStory.jpg")
+  },
+  {
+    id: 0,
+    name: "mike",
+    image: require("../../src/gallery/profilePictures/monsterInc.jpg"),
+    story: require("../../src/gallery/storyPictures/monsterStory.jpg")
+  },
+  {
+    id: 0,
+    name: "shrek",
+    image: require("../../src/gallery/profilePictures/shrek.jpg"),
+    story: require("../../src/gallery/storyPictures/shrekStory.jpg")
   }
 ];

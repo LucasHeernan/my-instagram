@@ -39,7 +39,7 @@ export default function Notifications() {
           >
             <TouchableOpacity activeOpacity={0.7} >
               <Image
-                source={require("../gallery/profilePictures/profile3.jpg")}
+                source={require("../gallery/profilePictures/groot.jpg")}
                 style={{
                   width: 45,
                   height: 45,

@@ -4,7 +4,7 @@ import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 
 export default function Story({ route, navigation }) {
 
-  const { name, image, setStory  } = route.params;
+  const { name, image, story, setStory  } = route.params;
   const [like, setLike] = useState(false)
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function Story({ route, navigation }) {
       </View>
 
       <Image
-        source={image}
+        source={story}
         style={{
           position: "absolute",
           width: "100%",

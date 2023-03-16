@@ -74,6 +74,7 @@ export default function Stories() {
                 onPress={() => navigation.push("Story", {
                   name: data.name,
                   image: data.image,
+                  story: data.story,
                   setStory
                 })}
                 style={{ flexDirection: "column", paddingHorizontal: 8, position: "relative" }}
