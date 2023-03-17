@@ -13,7 +13,7 @@ export default function Post() {
         postData.map((data, index) => {
           const [like, setLike] = useState(data.isLiked);
           return (
-            <View key={index} style={{ paddingBottom: 10 }}>
+            <View key={index} style={{ paddingBottom: 10, marginVertical: 1 }}>
               <View
                 style={{
                   flexDirection: "row",
@@ -23,8 +23,7 @@ export default function Post() {
                   paddingVertical: 10
                 }}
               >
-                <View style={{ flexDirection: "row", alignItems: "center" }}
-                >
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <Image
                     source={data.postPersonImage}
                     style={{ width: 40, height: 40, borderRadius: 100 }}
@@ -40,16 +39,10 @@ export default function Post() {
                 </TouchableOpacity>
               </View>
 
-              <View
-                style={{
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
+              <View style={{ height: 400 }}>
                 <Image
                   source={data.postImage}
-                  style={{ width: "100%", height: 400 }}
+                  style={{ width: "100%", height: "100%", resizeMode: "cover" }}
                 />
               </View>
 

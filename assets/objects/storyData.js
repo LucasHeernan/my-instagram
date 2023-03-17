@@ -37,7 +37,7 @@ export const storyData = [
   {
     id: 0,
     name: "buzz_lightyear",
-    image: require("../../src/gallery/profilePictures/bozz.jpg"),
+    image: require("../../src/gallery/profilePictures/buzz.jpg"),
     story: require("../../src/gallery/storyPictures/bozzStory.jpg")
   },
   {
@@ -49,8 +49,8 @@ export const storyData = [
   {
     id: 0,
     name: "sid",
-    image: require("../../src/gallery/profilePictures/sid.jpg"),
-    story: require("../../src/gallery/profilePictures/sid.jpg")
+    image: require("../../src/gallery/profilePictures/sid2.jpg"),
+    story: require("../../src/gallery/profilePictures/sid2.jpg")
   },
   {
     id: 0,
