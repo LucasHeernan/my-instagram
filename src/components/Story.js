@@ -5,7 +5,7 @@ import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
 export default function Story({ route, navigation }) {
 
   const { name, image, story, setStory  } = route.params;
-  const [like, setLike] = useState(false)
+  const [like, setLike] = useState(false);
 
   useEffect(() => {
 
@@ -45,18 +45,20 @@ export default function Story({ route, navigation }) {
       <StatusBar backgroundColor="black" barStyle="light-content" />
       <View
         style={{
-          height: 3,
+          height: 2.5,
           width: "95%",
-          borderWidth: 1,
-          backgroundColor: "gray",
+          backgroundColor: "#C6C6C6",
           position: "absolute",
+          borderRadius: 100,
           top: 18,
+          zIndex: 1,
         }}
       >
         <Animated.View
           style={{
             height: "100%",
             backgroundColor: "white",
+            borderRadius: 100,
             width: progressAnimation
           }}
         >
@@ -82,6 +84,7 @@ export default function Story({ route, navigation }) {
             height: 30,
             justifyContent: "center",
             alignItems: "center",
+            zIndex: 1
           }}
         >
           <Image
@@ -95,22 +98,30 @@ export default function Story({ route, navigation }) {
             }}
           />
         </View>
-        <View style={{ justifyContent: "space-between", flexDirection: "row", width: "100%" }}>
-          <Text style={{ color: "white", fontSize: 15, paddingLeft: 10 }}>{name}</Text>
+        <View
+          style={{
+            justifyContent: "space-between",
+            flexDirection: "row",
+            width: "100%",
+            zIndex: 1
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 17, fontWeight: "400", paddingLeft: 10 }}>{name}</Text>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Ionicons name="close" size={20} color="white" style={{ opacity: 0.7 }} />
+            <Ionicons name="close" size={21} color="white" />
           </TouchableOpacity>
         </View>
       </View>
 
-      <Image
-        source={story}
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: 600
-        }}
-      />
+        <Image
+          source={story}
+          style={{
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            height: "90%"
+          }}
+        />
 
       <View
         style={{
@@ -121,6 +132,7 @@ export default function Story({ route, navigation }) {
           alignItems: "center",
           justifyContent: "space-around",
           marginVertical: 10,
+          height: "6%",
           width: "100%",
           paddingHorizontal: 5
         }}

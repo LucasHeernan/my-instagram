@@ -49,8 +49,8 @@ export const storyData = [
   {
     id: 0,
     name: "sid",
-    image: require("../../src/gallery/profilePictures/sid2.jpg"),
-    story: require("../../src/gallery/profilePictures/sid2.jpg")
+    image: require("../../src/gallery/profilePictures/sid.jpg"),
+    story: require("../../src/gallery/storyPictures/sid.jpg")
   },
   {
     id: 0,
