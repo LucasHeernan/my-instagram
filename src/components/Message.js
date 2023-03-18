@@ -15,8 +15,8 @@ export default function Message() {
       <View
         style={{
           flexDirection: "row",
-					alignItems: "center",
-					justifyContent: "space-between",
+          alignItems: "center",
+          justifyContent: "space-between",
           paddingHorizontal: 20,
           paddingVertical: 15
         }}
@@ -57,7 +57,7 @@ export default function Message() {
         </Text>
       </View>
       
-      <View style={{ paddingVertical: 10 }}>
+      <View style={{ paddingTop: 10 }}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {
             iconsData.map((data, index) => {

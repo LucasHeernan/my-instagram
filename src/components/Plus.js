@@ -96,7 +96,7 @@ export default function Plus({ navigation }) {
 
         <MessageContacts plus={plus} />
 
-        <View style={{ paddingTop: 300 }}>
+        <View style={{ paddingTop: 200 }}>
           <MessageBottom />
         </View>
 

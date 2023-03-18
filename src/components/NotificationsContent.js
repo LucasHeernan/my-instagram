@@ -2,7 +2,18 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function NotificationsContent({ name, profileImage, week, follow, setFollow, posts, followers, following }) {
+export default function NotificationsContent({
+  name,
+  accountName,
+  profileImage,
+  follow,
+  setFollow,
+  posts,
+  week,
+  month,
+  earlier,
+  followers,
+  following }) {
 
   const navigation = useNavigation();
   
@@ -42,10 +53,23 @@ export default function NotificationsContent({ name, profileImage, week, follow,
             marginRight: 17,
           }}
         />
-        <Text style={{ fontSize: 13 }}>
-          <Text style={{ fontWeight: "bold" }}>{name}</Text> is on Instagram.
-          <Text style={{ fontWeight: "bold" }}>{ week ? " Ironman" : " Spiderman"}</Text> and others millions also follow them.
-        </Text>
+        {
+          month ? <Text style={{ fontSize: 14 }}>
+            <Text style={{ fontWeight: "bold" }}>{accountName}</Text> started following you.
+          </Text> : null
+        }
+        {
+          week ? <Text style={{ fontSize: 14 }}>
+            <Text style={{ fontWeight: "bold" }}>{accountName}</Text> is on Instagram.
+            <Text style={{ fontWeight: "bold" }}> Fiona</Text> and others millions also follow them.
+          </Text> : null
+        }
+        {
+          earlier ? <Text style={{ fontSize: 14 }}>
+            <Text style={{ fontWeight: "bold" }}>{name}</Text>,
+            <Text style={{ fontWeight: "bold" }}> Pixar</Text> and others shared 27 photos.
+          </Text> : null
+        }
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => setFollow(!follow)}

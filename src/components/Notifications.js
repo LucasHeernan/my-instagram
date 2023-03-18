@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import { friendsData } from "../../assets/objects/friendsData";
+import { suggestedData } from "../../assets/objects/suggestedData";
 import { useNavigation } from "@react-navigation/native";
 import { Octicons, Ionicons } from "@expo/vector-icons";
 import NotificationsContent from "./NotificationsContent";
@@ -83,16 +84,17 @@ export default function Notifications() {
         {
           friendsData.slice(0, 3).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
-            const [week, setWeek] = useState(true)
+            const [week, setWeek] = useState(true);
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
                   name={data.name}
+                  accountName={data.accountName}
                   profileImage={data.profileImage}
-                  week={week}
                   follow={follow}
                   setFollow={setFollow}
                   posts={data.posts}
+                  week={week}
                   followers={data.followers}
                   following={data.following}
                 />
@@ -103,16 +105,19 @@ export default function Notifications() {
 
         <Text style={{ fontWeight: "bold", marginVertical: 10 }}>This Month</Text>
         {
-          friendsData.slice(3, 6).map((data, index) => {
+          friendsData.slice(3, 7).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
+            const [month, setMonth] = useState(true);
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
                   name={data.name}
+                  accountName={data.accountName}
                   profileImage={data.profileImage}
                   follow={follow}
                   setFollow={setFollow}
                   posts={data.posts}
+                  month={month}
                   followers={data.followers}
                   following={data.following}
                 />
@@ -123,16 +128,19 @@ export default function Notifications() {
 
         <Text style={{ fontWeight: "bold", marginVertical: 10 }}>Earlier</Text>
         {
-          friendsData.slice(3, 6).map((data, index) => {
+          friendsData.slice(3, 7).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
+            const [earlier, setEarlier] = useState(true);
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
                   name={data.name}
+                  accountName={data.accountName}
                   profileImage={data.profileImage}
                   follow={follow}
                   setFollow={setFollow}
                   posts={data.posts}
+                  earlier={earlier}
                   followers={data.followers}
                   following={data.following}
                 />
@@ -143,7 +151,7 @@ export default function Notifications() {
 
         <Text style={{ fontWeight: "bold", paddingVertical: 10 }}>Suggestions for you</Text>
         {
-          friendsData.slice(6.12).map((data, index) => {
+          suggestedData.map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
             const [close, setClose] = useState(false);
             return (

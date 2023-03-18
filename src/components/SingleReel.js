@@ -24,9 +24,9 @@ export default function SingleReel({ item }) {
       style={{
         width: width,
         height: height,
-        position: 'relative',
-        justifyContent: 'center',
-        alignItems: 'center'
+        position: "relative",
+        justifyContent: "center",
+        alignItems: "center"
       }}
     >
       <TouchableOpacity
@@ -42,8 +42,8 @@ export default function SingleReel({ item }) {
           ref={firstVideo}
           source={item.video}
           style={{
-            width: '100%',
-            height: '100%',
+            width: "100%",
+            height: "100%",
           }}
           shouldPlay={true}
           rate={1}

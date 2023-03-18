@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StatusBar, ScrollView, TouchableOpacity, Image, Text } from "react-native";
-import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import Stories from "../components/Stories";
 import Post from "../components/Post";
 
@@ -13,6 +13,7 @@ export default function Home() {
 		<View
 			style={{
 				backgroundColor: "#FFFFFF",
+        width: "100%",
 				height: "100%"
 			}}
 		>

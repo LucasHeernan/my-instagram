@@ -8,7 +8,7 @@ export const postData = [
   },
   {
     postTitle: "manny",
-    postPersonImage: require("../../src/gallery/profilePictures/manny2.jpg"),
+    postPersonImage: require("../../src/gallery/profilePictures/manny.jpg"),
     postImage: require("../../src/gallery/postImages/manny.png"),
     likes: 765,
     isLiked: false,

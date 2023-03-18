@@ -36,6 +36,7 @@ export default function Story({ route, navigation }) {
     <View
       style={{
         backgroundColor: "black",
+        width: "100%",
         height: "100%",
         position: "relative",
         justifyContent: "center",

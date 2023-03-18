@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
-import { friendsData } from "../../assets/objects/friendsData";
+import { suggestedData } from "../../assets/objects/suggestedData";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function Suggested({ name, friendProfile }) {
@@ -24,7 +24,7 @@ export default function Suggested({ name, friendProfile }) {
         showsHorizontalScrollIndicator={false}
       >
         {
-          friendsData.map((data, index) => {
+          suggestedData.map((data, index) => {
             const [follow, setFollow] = useState(false);
             const [close, setClose] = useState(false);
             return data.name === name || close ? null : (
@@ -58,9 +58,9 @@ export default function Suggested({ name, friendProfile }) {
                     }}
                   />
                   <Text style={{ fontWeight: "500", fontSize: 14 }}>
-                    {data.name}
+                    {data.accountName}
                   </Text>
-                  <Text style={{ fontSize: 11, opacity: 0.5 }}>{data.accountName}</Text>
+                  <Text style={{ fontSize: 11, opacity: 0.5 }}>Follows you</Text>
                   <View
                     style={{
                       width: "95%",
