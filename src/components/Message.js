@@ -38,15 +38,16 @@ export default function Message() {
         }}
       >
         <Image
-          source={require("../gallery/profilePictures/userProfile.png")}
+          source={require("../gallery/profilePictures/perfil.jpg")}
           style={{
             resizeMode: "cover",
             width: 120,
             height: 120,
             borderRadius: 100,
-            borderWidth: 1,
+            borderWidth: 0.8,
             borderColor: "#0195F7",
-            marginBottom: 5
+            marginBottom: 5,
+            transform: [{ rotate: "-10deg" }]
           }}
         />
         <Text style={{ fontSize: 20, fontWeight: "700" }}>

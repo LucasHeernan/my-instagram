@@ -54,7 +54,7 @@ export default function Profile() {
           </View>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <TouchableOpacity onPress={() => navigation.push("Plus")}>
-              <Feather name="plus-square" size={25} style={{ paddingHorizontal: 18 }} />
+              <Feather name="plus-square" size={25} color="#0195F7" style={{ paddingHorizontal: 18 }} />
             </TouchableOpacity>
             <TouchableOpacity>
               <SimpleLineIcons name="menu" size={22} />

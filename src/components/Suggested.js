@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { suggestedData } from "../../assets/objects/suggestedData";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Suggested({ name, friendProfile }) {
+
+  const navigation = useNavigation();
 
   return (
     <View style={{ marginLeft: 11, marginBottom: 15 }}>
@@ -47,16 +50,30 @@ export default function Suggested({ name, friendProfile }) {
                   >
                     <AntDesign name="close" size={18} color="black" style={{ opacity: 0.5 }} />
                   </TouchableOpacity>
-                  <Image
-                    source={data.profileImage}
-                    style={{
-                      width: 85,
-                      height: 85,
-                      borderRadius: 100,
-                      marginTop: 12,
-                      marginBottom: 9
-                    }}
-                  />
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.push("FriendProfile", {
+                        name: data.name,
+                        accountName: data.accountName,
+                        profileImage: data.profileImage,
+                        follow: data.follow,
+                        posts: data.posts,
+                        followers: data.followers,
+                        following: data.following,
+                      })
+                    }
+                  >
+                    <Image
+                      source={data.profileImage}
+                      style={{
+                        width: 85,
+                        height: 85,
+                        borderRadius: 100,
+                        marginTop: 12,
+                        marginBottom: 9
+                      }}
+                    />
+                  </TouchableOpacity>
                   <Text style={{ fontWeight: "500", fontSize: 14 }}>
                     {data.accountName}
                   </Text>

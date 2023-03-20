@@ -7,8 +7,8 @@ import ProfileStoryHighlights from "./ProfileStoryHighlights";
 
 export default function Plus({ navigation }) {
 
-  const [like, setLike] = useState(false)
-  const [plus, setPlus] = useState(true)
+  const [like, setLike] = useState(false);
+  const [plus, setPlus] = useState(true);
 
   return (
     <View style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
@@ -85,11 +85,10 @@ export default function Plus({ navigation }) {
               fontSize: 20,
               fontWeight: "700",
               color: "#0195F7",
-              paddingVertical: 10,
+              paddingTop: 10,
               backgroundColor: "white"
             }}
           >Technologies</Text>
-          <Text>As a Full Stack <Text style={{ fontWeight: "bold" }}>PERN</Text> developer these are the technologies that I use</Text>
         </View>
         
         <ProfileStoryHighlights plus={plus} />

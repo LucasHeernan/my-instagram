@@ -2,7 +2,7 @@ export const storyData = [
   {
     id: 29,
     name: "Your Story",
-    image: require("../../src/gallery/profilePictures/userProfile.png")
+    image: require("../../src/gallery/profilePictures/perfil.jpg")
   },
   {
     id: 0,
@@ -54,19 +54,25 @@ export const storyData = [
   },
   {
     id: 0,
-    name: "alex",
+    name: "rey_alex",
     image: require("../../src/gallery/profilePictures/alex.jpg"),
     story: require("../../src/gallery/storyPictures/alexStory.jpg")
   },
   {
     id: 0,
-    name: "mike",
+    name: "mikewazowski",
     image: require("../../src/gallery/profilePictures/monsterInc.jpg"),
     story: require("../../src/gallery/storyPictures/monsterStory.jpg")
   },
   {
     id: 0,
-    name: "shrek",
+    name: "el_banquero",
+    image: require("../../src/gallery/profilePictures/cerdito.jpg"),
+    story: require("../../src/gallery/storyPictures/hammStory.jpg")
+  },
+  {
+    id: 0,
+    name: "shrek_4ever",
     image: require("../../src/gallery/profilePictures/shrek.jpg"),
     story: require("../../src/gallery/storyPictures/shrekStory.jpg")
   }

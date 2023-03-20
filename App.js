@@ -59,12 +59,13 @@ export default function App() {
                   }}
                 >
                   <Image
-                    source={require("./src/gallery/profilePictures/userProfile.png")}
+                    source={require("./src/gallery/profilePictures/perfil.jpg")}
                     style={{
                       width: "100%",
                       height: "100%",
                       resizeMode: "cover",
                       borderRadius: 100,
+                      transform: [{ rotate: "-10deg" }]
                     }}
                   />
                 </View>
@@ -80,12 +81,13 @@ export default function App() {
                   }}
                 >
                   <Image
-                    source={require("./src/gallery/profilePictures/userProfile.png")}
+                    source={require("./src/gallery/profilePictures/perfil.jpg")}
                     style={{
                       width: "100%",
                       height: "100%",
                       resizeMode: "cover",
-                      borderRadius: 100
+                      borderRadius: 100,
+                      transform: [{ rotate: "-10deg" }]
                     }}
                   />
                 </View>

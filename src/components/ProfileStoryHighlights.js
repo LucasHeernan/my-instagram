@@ -10,7 +10,7 @@ export default function ProfileStoryHighlights({ plus }) {
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        style={{ paddingVertical: 12 }}
+        style={{ paddingVertical: 14 }}
       >
         {
           iconsData.map((data, index) => {
@@ -26,8 +26,8 @@ export default function ProfileStoryHighlights({ plus }) {
               >
                 <TouchableOpacity
                   style={{
-                    width: 64,
-                    height: 64,
+                    width: 68,
+                    height: 68,
                     borderRadius: 100,
                     borderWidth: 1,
                     borderColor: "#E6E6E6",
@@ -40,8 +40,8 @@ export default function ProfileStoryHighlights({ plus }) {
                     source={data.img}
                     style={{
                       resizeMode: "cover",
-                      width: "92%",
-                      height: "92%",
+                      width: "94%",
+                      height: "94%",
                       borderRadius: 100,
                       backgroundColor: "white",
                       borderWidth: 0.5,
@@ -119,8 +119,8 @@ export default function ProfileStoryHighlights({ plus }) {
           >
             <TouchableOpacity
               style={{
-                width: 61,
-                height: 61,
+                width: 66,
+                height: 66,
                 borderRadius: 100,
                 borderWidth: 1.2,
                 alignItems: "center",

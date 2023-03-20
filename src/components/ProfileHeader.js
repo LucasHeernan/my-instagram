@@ -56,7 +56,7 @@ export default function ProfileHeader({ name, profileImage, posts, followers, fo
             >
               <View style={{ alignItems: "center" }}>
                 <Image
-                  source={require("../gallery/profilePictures/userProfile.png")}
+                  source={require("../gallery/profilePictures/perfil.jpg")}
                   style={{
                     display: "flex",
                     resizeMode: "cover",
@@ -82,10 +82,10 @@ export default function ProfileHeader({ name, profileImage, posts, followers, fo
             </View>
       
             <View style={{ flexDirection: "column" }} >
-              <Text style={{ fontSize: 14, fontWeight: "600" }}>
+              <Text style={{ fontSize: 14, fontWeight: "700" }}>
                 Lucas Benitez
               </Text>
-              <Text style={{ fontSize: 13 }}>
+              <Text style={{ fontSize: 13, fontWeight: "500" }}>
                 FullStack Developer
               </Text>
             </View>

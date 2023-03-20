@@ -30,7 +30,7 @@ export default function NewPostGallery() {
           <TouchableOpacity
             onPress={() => setSelect(!select)}
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "#A4A4A4",
               padding: 7,
               borderRadius: 100,
               alignItems: "center",
@@ -52,7 +52,7 @@ export default function NewPostGallery() {
           </TouchableOpacity>
           <TouchableOpacity
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "#A4A4A4",
               padding: 7,
               borderRadius: 100,
             }}

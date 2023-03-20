@@ -9,6 +9,7 @@ import NotificationsContent from "./NotificationsContent";
 export default function Notifications() {
 
   const navigation = useNavigation();
+  const [follow, setFollow] = useState(true);
 
   return (
     <View style={{ width: "100%", height: "100%", backgroundColor: "white" }}>
@@ -38,9 +39,22 @@ export default function Notifications() {
               position: "relative"
             }}
           >
-            <TouchableOpacity activeOpacity={0.7} >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() =>
+                navigation.push("FriendProfile", {
+                  name: "Boo",
+                  accountName: "gatiitooo",
+                  profileImage: require("../gallery/requestPictures/boo.jpg"),
+                  follow: follow,
+                  posts: 41,
+                  followers: "149K",
+                  following: 13,
+                })
+              }
+            >
               <Image
-                source={require("../gallery/profilePictures/groot.jpg")}
+                source={require("../gallery/requestPictures/boo.jpg")}
                 style={{
                   width: 45,
                   height: 45,
@@ -85,6 +99,8 @@ export default function Notifications() {
           friendsData.slice(0, 3).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
             const [week, setWeek] = useState(true);
+            let random = () => Math.floor(Math.random() * 3) + 1;
+            let num = random();
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
@@ -95,6 +111,7 @@ export default function Notifications() {
                   setFollow={setFollow}
                   posts={data.posts}
                   week={week}
+                  num={num}
                   followers={data.followers}
                   following={data.following}
                 />
@@ -108,6 +125,8 @@ export default function Notifications() {
           friendsData.slice(3, 7).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
             const [month, setMonth] = useState(true);
+            let random = () => Math.floor(Math.random() * 4) + 1;
+            let num = random();
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
@@ -118,6 +137,7 @@ export default function Notifications() {
                   setFollow={setFollow}
                   posts={data.posts}
                   month={month}
+                  num={num}
                   followers={data.followers}
                   following={data.following}
                 />
@@ -128,9 +148,13 @@ export default function Notifications() {
 
         <Text style={{ fontWeight: "bold", marginVertical: 10 }}>Earlier</Text>
         {
-          friendsData.slice(3, 7).map((data, index) => {
+          friendsData.slice(7, 11).map((data, index) => {
             const [follow, setFollow] = useState(data.follow);
             const [earlier, setEarlier] = useState(true);
+            let randomF = () => Math.floor(Math.random() * 11) + 15;
+            let randomW = () => Math.floor(Math.random() * 3) + 1;
+            let num = randomF();
+            let numW = randomW();
             return (
               <View key={index} style={{ width: "100%" }}>
                 <NotificationsContent
@@ -141,6 +165,8 @@ export default function Notifications() {
                   setFollow={setFollow}
                   posts={data.posts}
                   earlier={earlier}
+                  num={num}
+                  numW={numW}
                   followers={data.followers}
                   following={data.following}
                 />
@@ -170,6 +196,7 @@ export default function Notifications() {
                         onPress={() =>
                           navigation.push("FriendProfile", {
                             name: data.name,
+                            accountName: data.accountName,
                             profileImage: data.profileImage,
                             follow: follow,
                             posts: data.posts,

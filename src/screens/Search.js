@@ -7,9 +7,11 @@ import { Ionicons, Feather } from "@expo/vector-icons";
 export default function Search() {
 
   const [image, setImage] = useState(null);
+  const [accountName, setAccountName] = useState(null);
 
-  const getImage = (currentImage) => {
-    setImage(currentImage)
+  const getData = (currentImage, currentName) => {
+    setImage(currentImage);
+    setAccountName(currentName);
   }
 
   const { width, height } = Dimensions.get("window");
@@ -25,7 +27,7 @@ export default function Search() {
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <SearchBar />
-        <SearchContent getImage={getImage} />
+        <SearchContent getData={getData} />
       </ScrollView>
       {
         image ? (
@@ -69,8 +71,8 @@ export default function Search() {
                   }}
                 />
                 <View style={{ paddingLeft: 8 }}>
-                  <Text style={{ fontSize: 12, fontWeight: "600" }}>
-                    profile_image
+                  <Text style={{ fontSize: 16, fontWeight: "500" }}>
+                    {accountName}
                   </Text>
                 </View>
               </View>

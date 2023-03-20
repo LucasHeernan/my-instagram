@@ -14,7 +14,7 @@ export default function MessageBottom() {
         }}
       >
         <Image
-          source={require("../gallery/profilePictures/userProfile.png")}
+          source={require("../gallery/profilePictures/perfil.jpg")}
           style={{
             resizeMode: "cover",
             width: 25,

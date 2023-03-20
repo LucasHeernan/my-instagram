@@ -46,7 +46,7 @@ export default function Story({ route, navigation }) {
       <StatusBar backgroundColor="black" barStyle="light-content" />
       <View
         style={{
-          height: 2.5,
+          height: 2.2,
           width: "95%",
           backgroundColor: "#C6C6C6",
           position: "absolute",
@@ -85,6 +85,10 @@ export default function Story({ route, navigation }) {
             height: 30,
             justifyContent: "center",
             alignItems: "center",
+            shadowOffset: { width: 5, height: 5 },
+            shadowRadius: 30,
+            shadowColor: "black",
+            elevation: 25,
             zIndex: 1
           }}
         >
@@ -107,7 +111,17 @@ export default function Story({ route, navigation }) {
             zIndex: 1
           }}
         >
-          <Text style={{ color: "white", fontSize: 17, fontWeight: "400", paddingLeft: 10 }}>{name}</Text>
+          <Text
+            style={{
+              color: "white",
+              fontSize: 17,
+              fontWeight: "400",
+              paddingLeft: 10,
+              textShadowOffset: { width: 1, height: 1 },
+              textShadowRadius: 2,
+              textShadowColor: "gray"
+            }}
+          >{name}</Text>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Ionicons name="close" size={21} color="white" />
           </TouchableOpacity>

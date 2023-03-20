@@ -59,7 +59,8 @@ export default function Stories() {
                       width: "90%",
                       height: "90%",
                       borderRadius: 100,
-                      backgroundColor: "white"
+                      backgroundColor: "white",
+                      // transform: [{ rotate: "-15deg" }]
                     }}
                   />
                 </View>

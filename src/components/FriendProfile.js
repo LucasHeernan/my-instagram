@@ -7,8 +7,8 @@ import Suggested from "./Suggested";
 
 export default function FriendProfile({ route, navigation }) {
 
-  const { name, profileImage, posts, followers, following } = route.params;
-  const [moreFriends, setMoreFriends] = useState(false);
+  const { name, accountName, profileImage, posts, followers, following } = route.params;
+  const [moreFriends, setMoreFriends] = useState(true);
 
   return (
     <View
@@ -37,7 +37,7 @@ export default function FriendProfile({ route, navigation }) {
             width: "85%"
           }}>
           <Text style={{ fontSize: 20, fontWeight: "bold", bottom: 2 }}>
-            {name}
+            {accountName}
           </Text>
           <TouchableOpacity>
             <Feather name="more-vertical" size={20} color="black" />
@@ -60,9 +60,7 @@ export default function FriendProfile({ route, navigation }) {
         friendProfile={true}
       />
 
-      {
-        moreFriends ? <Suggested name={name} friendProfile={true} /> : null
-      }
+      { moreFriends ? <Suggested name={name} friendProfile={true} /> : null }
       
     </View>
   )

@@ -7,6 +7,21 @@ export default function Post() {
 
   const [keep, setKeep] = useState(false);
 
+  function plusOne(str) {
+    let num = parseFloat(str.replace(/,/g, "")) + 1;
+    let numStr = num.toString();
+    let result = "";
+    let len = numStr.length;
+    let count = 0;
+    
+    for (let i = len - 1; i >= 0; i--) {
+      result = numStr.charAt(i) + result;
+      count++;
+      count % 3 == 0 && i != 0 ? result = "," + result : null;
+    }
+    return result;
+  }
+  
   return (
     <View>
       {
@@ -28,7 +43,7 @@ export default function Post() {
                     source={data.postPersonImage}
                     style={{ width: 40, height: 40, borderRadius: 100 }}
                   />
-                  <View style={{ paddingLeft: 5 }} >
+                  <View style={{ paddingLeft: 10 }} >
                     <Text style={{ fontSize: 15, fontWeight: "500" }} >
                       {data.postTitle}
                     </Text>
@@ -80,7 +95,10 @@ export default function Post() {
               <View style={{ paddingHorizontal: 15 }} >
                 <Text>
                   Liked by { like ? <><Text style={{ fontWeight: "bold" }}>you</Text><Text> and </Text></> : "" }
-                  <Text style={{ fontWeight: "bold" }}>{ like ? data.likes + 1 : data.likes } others</Text>
+                  <Text style={{ fontWeight: "bold" }}>
+                    { like ? plusOne(data.likes) : data.likes }
+                  </Text>
+                  <Text style={{ fontWeight: "bold" }}> others</Text>
                 </Text>
                 <Text
                   style={{
@@ -96,7 +114,7 @@ export default function Post() {
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Image
-                      source={data.postPersonImage}
+                      source={require("../gallery/profilePictures/perfil.jpg")}
                       style={{
                         width: 25,
                         height: 25,
