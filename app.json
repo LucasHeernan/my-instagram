@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/instagram.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.lucasheernan.myinstagram"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f19c97b0-a373-4c2d-b617-1549ce1d9514"
+      }
     }
   }
 }
